@@ -1,10 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 88 138" role="img" aria-label="EF monogram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -3 92 139" role="img" aria-label="EF monogram">
   <title>EF monogram</title>
-  <g fill="#3553A8">
-    <rect x="0"  y="0"  width="12" height="84"  rx="3.5"/>
-    <rect x="0"  y="0"  width="64" height="12"  rx="3.5"/>
-    <rect x="0"  y="36" width="74" height="12"  rx="3.5"/>
-    <rect x="0"  y="72" width="80" height="12"  rx="3.5"/>
-    <rect x="34" y="36" width="12" height="94"  rx="3.5"/>
+  <!-- Serif (Times-style) EF: thick stems, thin arms, beak serifs.
+       F stem centered at 32.1 / 84 = 0.382 of the width (golden ratio). -->
+  <g fill="#3553A8" stroke="#3553A8" stroke-width="1.2" stroke-linejoin="round">
+    <!-- E stem -->
+    <rect x="6" y="0" width="13" height="92" rx="1.2"/>
+    <!-- top arm + beak -->
+    <rect x="0" y="0" width="72" height="5.5" rx="1.2"/>
+    <path d="M65.5 5.5 L72.5 0 L73.8 21 L71.2 21 C70 13 68.2 8.2 65.5 5.5 Z"/>
+    <!-- middle arm + serif (also the F's top) -->
+    <rect x="6" y="42" width="70" height="5.5" rx="1.2"/>
+    <path d="M72.8 35 L76 35 L76 54.5 L72.8 54.5 C73.4 48 73.4 41.5 72.8 35 Z"/>
+    <!-- bottom arm + beak (also the F's middle) -->
+    <rect x="0" y="86.5" width="84" height="5.5" rx="1.2"/>
+    <path d="M77 86.5 L84.5 92 L85.8 64 L83 64 C82 74 80 82 77 86.5 Z"/>
+    <!-- F stem + foot serif -->
+    <rect x="25.6" y="42" width="13" height="90" rx="1.2"/>
+    <rect x="17" y="126.5" width="30.2" height="5.5" rx="1.2"/>
   </g>
 </svg>
