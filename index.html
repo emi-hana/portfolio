@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emily Fang — Art Portfolio</title>
+  <meta name="description" content="Paintings and portraits by Emily Fang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --text: #1c1c1c;
+      --muted: #7a7a7a;
+      --line: #e6e3de;
+      --blue: #3553a8;
+      --placeholder: #efece7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(251, 250, 248, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px; font-weight: 500; letter-spacing: 0.01em;
+    }
+    .logo span { color: var(--blue); }
+    nav ul { display: flex; gap: 32px; list-style: none; }
+    nav a {
+      font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--blue); }
+
+    /* Intro */
+    .intro { padding: 96px 0 72px; }
+    .intro h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.1;
+      max-width: 14ch;
+    }
+    .intro h1 em { color: var(--blue); }
+    .intro p { margin-top: 20px; color: var(--muted); max-width: 46ch; }
+
+    /* Gallery */
+    .section-label {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .section-label::before { content: ""; width: 24px; height: 1px; background: var(--blue); }
+    .gallery { columns: 3 300px; column-gap: 28px; padding-bottom: 96px; }
+    .piece { break-inside: avoid; margin-bottom: 36px; cursor: zoom-in; }
+    .piece .frame { overflow: hidden; background: var(--placeholder); }
+    .piece img { display: block; width: 100%; height: auto; transition: transform 0.5s ease; }
+    .piece:hover img { transform: scale(1.02); }
+    .piece .ph {
+      display: flex; align-items: center; justify-content: center;
+      color: #b5b0a8; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .piece.dummy { cursor: default; }
+    .caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; font-size: 13px; }
+    .caption .title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-style: italic; }
+    .caption .meta { color: var(--muted); white-space: nowrap; }
+
+    /* About & Contact */
+    .split { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding: 88px 0; border-top: 1px solid var(--line); }
+    .split h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 36px; }
+    .split p { color: #444; max-width: 58ch; }
+    .split p + p { margin-top: 16px; }
+    .contact-link {
+      display: inline-block; margin-top: 8px;
+      font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px;
+      color: var(--blue); border-bottom: 1px solid currentColor;
+    }
+    .socials { margin-top: 24px; display: flex; gap: 24px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .socials a { color: var(--muted); }
+    .socials a:hover { color: var(--blue); }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 12px; color: var(--muted); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(251, 250, 248, 0.97);
+      display: none; align-items: center; justify-content: center; flex-direction: column;
+      padding: 24px; cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 82vh; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    .lightbox .lb-caption { margin-top: 16px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; font-style: italic; }
+    .lightbox .close {
+      position: absolute; top: 20px; right: 24px; background: none; border: 0;
+      font-size: 28px; color: var(--muted); cursor: pointer;
+    }
+
+    @media (max-width: 720px) {
+      nav ul { gap: 18px; }
+      .intro { padding: 64px 0 48px; }
+      .split { grid-template-columns: 1fr; gap: 16px; padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="#" class="logo">Emily Fang<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Paintings &amp; <em>portraits</em>.</h1>
+      <p>A selection of recent work in oil and acrylic. More pieces coming soon.</p>
+    </section>
+
+    <section id="work">
+      <div class="section-label">Selected work</div>
+      <div class="gallery">
+        <figure class="piece" data-full="images/art-1.jpg" data-title="Portrait I">
+          <div class="frame"><img src="images/art-1.jpg" alt="Painted portrait of a man in a blue suit adjusting his tie" width="1545" height="2000" loading="lazy"></div>
+          <figcaption class="caption"><span class="title">Portrait I</span><span class="meta">Medium, year</span></figcaption>
+        </figure>
+
+        <figure class="piece dummy">
+          <div class="frame ph" style="aspect-ratio: 1 / 1;">Artwork coming soon</div>
+          <figcaption class="caption"><span class="title">Untitled</span><span class="meta">Medium, year</span></figcaption>
+        </figure>
+
+        <figure class="piece dummy">
+          <div class="frame ph" style="aspect-ratio: 3 / 4;">Artwork coming soon</div>
+          <figcaption class="caption"><span class="title">Untitled</span><span class="meta">Medium, year</span></figcaption>
+        </figure>
+
+        <figure class="piece" data-full="images/art-2.jpg" data-title="Portrait II">
+          <div class="frame"><img src="images/art-2.jpg" alt="Painted portrait of two children lying head to head, smiling" width="2000" height="1486" loading="lazy"></div>
+          <figcaption class="caption"><span class="title">Portrait II</span><span class="meta">Medium, year</span></figcaption>
+        </figure>
+
+        <figure class="piece dummy">
+          <div class="frame ph" style="aspect-ratio: 4 / 5;">Artwork coming soon</div>
+          <figcaption class="caption"><span class="title">Untitled</span><span class="meta">Medium, year</span></figcaption>
+        </figure>
+
+        <figure class="piece dummy">
+          <div class="frame ph" style="aspect-ratio: 4 / 3;">Artwork coming soon</div>
+          <figcaption class="caption"><span class="title">Untitled</span><span class="meta">Medium, year</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" class="split">
+      <h2>About</h2>
+      <div>
+        <p>Emily Fang is an artist working primarily in painting, with a focus on portraiture. Her work explores light, expression, and the quiet details that make a person recognizable.</p>
+        <p>This is placeholder text — replace it with your own bio, background, and anything you'd like visitors to know.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="split">
+      <h2>Contact</h2>
+      <div>
+        <p>For commissions, inquiries, or just to say hello:</p>
+        <a class="contact-link" href="mailto:hello@emilyfang.me">hello@emilyfang.me</a>
+        <div class="socials">
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year">2026</span> Emily Fang</div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" aria-label="Close">×</button>
+    <img alt="">
+    <div class="lb-caption"></div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('.lb-caption');
+    document.querySelectorAll('.piece[data-full]').forEach(p => {
+      p.addEventListener('click', () => {
+        lbImg.src = p.dataset.full;
+        lbImg.alt = p.querySelector('img').alt;
+        lbCap.textContent = p.dataset.title;
+        lb.classList.add('open');
+      });
+    });
+    const close = () => lb.classList.remove('open');
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+</body>
+</html>
