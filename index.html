@@ -139,62 +139,78 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
       <filter id="paint" x="-20%" y="-20%" width="140%" height="140%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="7" result="n"/>
-        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.11" numOctaves="2" seed="4" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" xChannelSelector="R" yChannelSelector="G"/>
       </filter>
-      <!-- yellow tulip, 40 x 64 -->
-      <symbol id="tulip" viewBox="0 0 40 64">
+      <linearGradient id="yFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FCEAA6"/><stop offset=".55" stop-color="#F6CF5C"/><stop offset="1" stop-color="#E7A92A"/></linearGradient>
+      <linearGradient id="ySide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3C656"/><stop offset="1" stop-color="#D9971E"/></linearGradient>
+      <linearGradient id="bFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE5FB"/><stop offset=".5" stop-color="#8FA7EA"/><stop offset="1" stop-color="#4C68C4"/></linearGradient>
+      <linearGradient id="bSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7F98E2"/><stop offset="1" stop-color="#3A55AE"/></linearGradient>
+      <linearGradient id="leafG" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#6E9460"/><stop offset="1" stop-color="#A3C08C"/></linearGradient>
+      <radialGradient id="fmnG" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#B7C9F6"/><stop offset="1" stop-color="#6483D9"/></radialGradient>
+      <linearGradient id="bellG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9DB2EE"/><stop offset="1" stop-color="#4F6BC7"/></linearGradient>
+      <radialGradient id="starG" cx=".5" cy="1" r="1"><stop offset="0" stop-color="#F2B637"/><stop offset="1" stop-color="#FBE08A"/></radialGradient>
+      <symbol id="tulipY" viewBox="0 0 40 92">
         <g filter="url(#paint)" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 30 C19 42 21 52 20 63" fill="none" stroke="#7FA36A" stroke-width="2.4"/>
-          <path d="M20 58 C12 54 8 46 9 38 C14 42 18 49 20 58 Z" fill="#8DB275"/>
-          <path d="M20 12 C13 12 9 18 10 25 C11 31 15 34 20 34 C25 34 29 31 30 25 C31 18 27 12 20 12 Z" fill="#F4C84A"/>
-          <path d="M20 8 C16 12 15 20 16 30 C17 33 19 34 20 34 C21 34 23 33 24 30 C25 20 24 12 20 8 Z" fill="#F9DA6E"/>
-          <path d="M10 14 C9 20 11 28 16 32 C13 26 12 20 13 13 Z" fill="#EDB935"/>
-          <path d="M30 14 C31 20 29 28 24 32 C27 26 28 20 27 13 Z" fill="#EDB935"/>
-          <path d="M19 13 C18 18 18 24 19 29" fill="none" stroke="#FDEBA3" stroke-width="1.3" opacity=".8"/>
-          <path d="M13 19 C13 23 14 26 15 28" fill="none" stroke="#FBE08A" stroke-width="1" opacity=".7"/>
+          <path d="M20 33 C20.5 50 19 66 22.5 90" fill="none" stroke="#6E9460" stroke-width="1.7"/>
+          <path d="M22 89 C12.5 79 10.5 63 13.5 49 C15.5 62 18.5 76 22 89 Z" fill="url(#leafG)"/>
+          <path d="M22.5 90 C28 82 31 72 30 62 C27 70 24.5 80 22.5 90 Z" fill="#86A873" opacity=".8"/>
+          <path d="M20 34 C12 33 8.6 25 9.6 16 C10.2 12 12.4 9.6 15 8.6 C15 17 16.8 26 20 34 Z" fill="url(#ySide)"/>
+          <path d="M20 34 C28 33 31.4 25 30.4 16 C29.8 12 27.6 9.6 25 8.6 C25 17 23.2 26 20 34 Z" fill="url(#ySide)"/>
+          <path d="M20 35.5 C14 33.5 12.8 24.5 13.8 17 C14.6 12 17.6 7.8 20 5.6 C22.4 7.8 25.4 12 26.2 17 C27.2 24.5 26 33.5 20 35.5 Z" fill="url(#yFront)"/>
+          <path d="M19.2 10.5 C18.2 16.5 18.2 24.5 19.6 31" fill="none" stroke="#FFF3C8" stroke-width=".9" opacity=".75"/>
+          <path d="M15.8 15 C15.4 20 16 25 17.4 29" fill="none" stroke="#FFF3C8" stroke-width=".6" opacity=".5"/>
         </g>
       </symbol>
-      <!-- blue forget-me-not, 30 x 30 -->
-      <symbol id="fmn" viewBox="0 0 30 30">
-        <g filter="url(#paint)">
-          <g fill="#6F8FDF">
-            <circle cx="15" cy="7.5" r="5.4"/>
-            <circle cx="22.1" cy="12.7" r="5.4"/>
-            <circle cx="19.4" cy="21.1" r="5.4"/>
-            <circle cx="10.6" cy="21.1" r="5.4"/>
-            <circle cx="7.9" cy="12.7" r="5.4"/>
-          </g>
-          <g fill="#9CB3F0" opacity=".85">
-            <circle cx="14.2" cy="6.6" r="2.2"/>
-            <circle cx="21.6" cy="11.5" r="2.2"/>
-            <circle cx="19.6" cy="19.8" r="2"/>
-            <circle cx="10" cy="20" r="2"/>
-            <circle cx="7.6" cy="11.6" r="2.2"/>
-          </g>
-          <circle cx="15" cy="14.6" r="3.4" fill="#FFFFFF"/>
-          <circle cx="15" cy="14.6" r="2" fill="#F3C94B"/>
+      <symbol id="tulipB" viewBox="0 0 40 92">
+        <g filter="url(#paint)" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 33 C20.5 50 19 66 22.5 90" fill="none" stroke="#6E9460" stroke-width="1.7"/>
+          <path d="M22 89 C12.5 79 10.5 63 13.5 49 C15.5 62 18.5 76 22 89 Z" fill="url(#leafG)"/>
+          <path d="M22.5 90 C28 82 31 72 30 62 C27 70 24.5 80 22.5 90 Z" fill="#86A873" opacity=".8"/>
+          <path d="M20 34 C12 33 8.6 25 9.6 16 C10.2 12 12.4 9.6 15 8.6 C15 17 16.8 26 20 34 Z" fill="url(#bSide)"/>
+          <path d="M20 34 C28 33 31.4 25 30.4 16 C29.8 12 27.6 9.6 25 8.6 C25 17 23.2 26 20 34 Z" fill="url(#bSide)"/>
+          <path d="M20 35.5 C14 33.5 12.8 24.5 13.8 17 C14.6 12 17.6 7.8 20 5.6 C22.4 7.8 25.4 12 26.2 17 C27.2 24.5 26 33.5 20 35.5 Z" fill="url(#bFront)"/>
+          <path d="M19.2 10.5 C18.2 16.5 18.2 24.5 19.6 31" fill="none" stroke="#EEF3FF" stroke-width=".9" opacity=".75"/>
+          <path d="M15.8 15 C15.4 20 16 25 17.4 29" fill="none" stroke="#EEF3FF" stroke-width=".6" opacity=".5"/>
+        </g>
+      </symbol>
+      <symbol id="fmnSprig" viewBox="0 0 46 56">
+        <g filter="url(#paint)" stroke-linecap="round">
+          <path d="M14 55 C16 44 20 34 30 24 M19 40 C14 34 11 28 11 20 M25 30 C31 28 36 24 39 17" fill="none" stroke="#6E9460" stroke-width="1.1"/>
+          <path d="M16 50 C10 48 7 44 7 39 C11 41 14 45 16 50 Z" fill="#8DAF79"/>
+          <ellipse cx="30.50" cy="14.56" rx="3.22" ry="2.91" transform="rotate(0 30.50 14.56)" fill="url(#fmnG)"/><ellipse cx="35.20" cy="17.97" rx="3.22" ry="2.91" transform="rotate(72 35.20 17.97)" fill="url(#fmnG)"/><ellipse cx="33.40" cy="23.50" rx="3.22" ry="2.91" transform="rotate(144 33.40 23.50)" fill="url(#fmnG)"/><ellipse cx="27.60" cy="23.50" rx="3.22" ry="2.91" transform="rotate(216 27.60 23.50)" fill="url(#fmnG)"/><ellipse cx="25.80" cy="17.97" rx="3.22" ry="2.91" transform="rotate(288 25.80 17.97)" fill="url(#fmnG)"/><circle cx="30.5" cy="19.5" r="2.18" fill="#FFFDF4"/><circle cx="30.5" cy="19.5" r="1.14" fill="#F0C548"/><ellipse cx="11.00" cy="11.32" rx="2.73" ry="2.46" transform="rotate(0 11.00 11.32)" fill="url(#fmnG)"/><ellipse cx="14.98" cy="14.21" rx="2.73" ry="2.46" transform="rotate(72 14.98 14.21)" fill="url(#fmnG)"/><ellipse cx="13.46" cy="18.88" rx="2.73" ry="2.46" transform="rotate(144 13.46 18.88)" fill="url(#fmnG)"/><ellipse cx="8.54" cy="18.88" rx="2.73" ry="2.46" transform="rotate(216 8.54 18.88)" fill="url(#fmnG)"/><ellipse cx="7.02" cy="14.21" rx="2.73" ry="2.46" transform="rotate(288 7.02 14.21)" fill="url(#fmnG)"/><circle cx="11" cy="15.5" r="1.85" fill="#FFFDF4"/><circle cx="11" cy="15.5" r="0.97" fill="#F0C548"/><ellipse cx="39.50" cy="9.08" rx="2.23" ry="2.02" transform="rotate(0 39.50 9.08)" fill="url(#fmnG)"/><ellipse cx="42.75" cy="11.44" rx="2.23" ry="2.02" transform="rotate(72 42.75 11.44)" fill="url(#fmnG)"/><ellipse cx="41.51" cy="15.27" rx="2.23" ry="2.02" transform="rotate(144 41.51 15.27)" fill="url(#fmnG)"/><ellipse cx="37.49" cy="15.27" rx="2.23" ry="2.02" transform="rotate(216 37.49 15.27)" fill="url(#fmnG)"/><ellipse cx="36.25" cy="11.44" rx="2.23" ry="2.02" transform="rotate(288 36.25 11.44)" fill="url(#fmnG)"/><circle cx="39.5" cy="12.5" r="1.51" fill="#FFFDF4"/><circle cx="39.5" cy="12.5" r="0.79" fill="#F0C548"/>
+          <circle cx="34" cy="8" r="1.8" fill="#C9B6E8"/><circle cx="8" cy="8.5" r="1.5" fill="#B9C7F2"/><circle cx="43" cy="7" r="1.3" fill="#D3C2EE"/>
+        </g>
+      </symbol>
+      <symbol id="bluebell" viewBox="0 0 44 64">
+        <g filter="url(#paint)" stroke-linecap="round">
+          <path d="M9 63 C9 44 15 22 38 9" fill="none" stroke="#6E9460" stroke-width="1.2"/>
+          <path d="M9 62 C3 50 3 38 6 28 C8 40 9 50 9 62 Z" fill="url(#leafG)"/>
+          <g transform="translate(14 33) rotate(8) scale(1.05)"><path d="M0 -1.5 L0 1" stroke="#6E9460" stroke-width=".7"/><path d="M-3.6 1 C-3.8 -2.6 3.8 -2.6 3.6 1 L4.6 7.2 C3.2 6.1 2.2 7.8 1.1 6.6 C0.2 7.9 -0.6 7.9 -1.4 6.6 C-2.4 7.8 -3.4 6.2 -4.6 7.2 Z" fill="url(#bellG)"/><path d="M-1.3 1.6 C-1.6 3.4 -1.6 5 -1.2 6.2" stroke="#B9CBF5" stroke-width=".55" fill="none" opacity=".8"/></g><g transform="translate(20 23) rotate(2) scale(1)"><path d="M0 -1.5 L0 1" stroke="#6E9460" stroke-width=".7"/><path d="M-3.6 1 C-3.8 -2.6 3.8 -2.6 3.6 1 L4.6 7.2 C3.2 6.1 2.2 7.8 1.1 6.6 C0.2 7.9 -0.6 7.9 -1.4 6.6 C-2.4 7.8 -3.4 6.2 -4.6 7.2 Z" fill="url(#bellG)"/><path d="M-1.3 1.6 C-1.6 3.4 -1.6 5 -1.2 6.2" stroke="#B9CBF5" stroke-width=".55" fill="none" opacity=".8"/></g><g transform="translate(27.5 16) rotate(-6) scale(0.9)"><path d="M0 -1.5 L0 1" stroke="#6E9460" stroke-width=".7"/><path d="M-3.6 1 C-3.8 -2.6 3.8 -2.6 3.6 1 L4.6 7.2 C3.2 6.1 2.2 7.8 1.1 6.6 C0.2 7.9 -0.6 7.9 -1.4 6.6 C-2.4 7.8 -3.4 6.2 -4.6 7.2 Z" fill="url(#bellG)"/><path d="M-1.3 1.6 C-1.6 3.4 -1.6 5 -1.2 6.2" stroke="#B9CBF5" stroke-width=".55" fill="none" opacity=".8"/></g><g transform="translate(34.5 11.5) rotate(-12) scale(0.72)"><path d="M0 -1.5 L0 1" stroke="#6E9460" stroke-width=".7"/><path d="M-3.6 1 C-3.8 -2.6 3.8 -2.6 3.6 1 L4.6 7.2 C3.2 6.1 2.2 7.8 1.1 6.6 C0.2 7.9 -0.6 7.9 -1.4 6.6 C-2.4 7.8 -3.4 6.2 -4.6 7.2 Z" fill="url(#bellG)"/><path d="M-1.3 1.6 C-1.6 3.4 -1.6 5 -1.2 6.2" stroke="#B9CBF5" stroke-width=".55" fill="none" opacity=".8"/></g>
+        </g>
+      </symbol>
+      <symbol id="stars" viewBox="0 0 40 40">
+        <g filter="url(#paint)" stroke-linecap="round">
+          <path d="M16 39 C16 31 15 25 14 19 M16 34 C21 30 25 27 28 22" fill="none" stroke="#6E9460" stroke-width="1"/>
+          <ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(22.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(67.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(112.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(157.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(202.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(247.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(292.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(337.5 14 15)" fill="url(#starG)"/><circle cx="14" cy="15" r="2.20" fill="#D98E1E"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(22.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(67.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(112.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(157.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(202.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(247.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(292.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(337.5 28.5 19.5)" fill="url(#starG)"/><circle cx="28.5" cy="19.5" r="1.50" fill="#D98E1E"/>
         </g>
       </symbol>
     </defs>
   </svg>
   <div class="blooms" aria-hidden="true">
-    <span class="bloom" style="left:4%;top:7%;width:48px;--w:48px;--r:-8deg"><svg viewBox="0 0 40 64"><use href="#tulip"/></svg></span>
-    <span class="bloom" style="left:6.5%;top:9.5%;width:25px;--w:25px;--r:10deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom" style="left:2.8%;top:11.5%;width:18px;--w:18px;--r:-15deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom" style="left:96%;top:17%;width:28px;--w:28px;--r:20deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom wide-only" style="left:93.8%;top:19.5%;width:20px;--w:20px;--r:-5deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom" style="left:95%;top:33%;width:42px;--w:42px;--r:9deg"><svg viewBox="0 0 40 64"><use href="#tulip"/></svg></span>
-    <span class="bloom" style="left:97.2%;top:36.5%;width:21px;--w:21px;--r:0deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom" style="left:3.5%;top:44%;width:27px;--w:27px;--r:12deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom wide-only" style="left:5.8%;top:47%;width:39px;--w:39px;--r:-6deg"><svg viewBox="0 0 40 64"><use href="#tulip"/></svg></span>
-    <span class="bloom" style="left:96.5%;top:58%;width:24px;--w:24px;--r:-12deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom wide-only" style="left:94.5%;top:61%;width:17px;--w:17px;--r:25deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom" style="left:4.5%;top:70%;width:45px;--w:45px;--r:7deg"><svg viewBox="0 0 40 64"><use href="#tulip"/></svg></span>
-    <span class="bloom" style="left:7%;top:73%;width:21px;--w:21px;--r:-20deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom" style="left:95.5%;top:82%;width:42px;--w:42px;--r:-10deg"><svg viewBox="0 0 40 64"><use href="#tulip"/></svg></span>
-    <span class="bloom" style="left:93%;top:85%;width:22px;--w:22px;--r:8deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
-    <span class="bloom wide-only" style="left:3.5%;top:92%;width:25px;--w:25px;--r:0deg"><svg viewBox="0 0 30 30"><use href="#fmn"/></svg></span>
+    <span class="bloom" style="left:4.2%;top:7%;width:34px;--w:34px;--r:-6deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
+    <span class="bloom" style="left:7%;top:9%;width:30px;--w:30px;--r:8deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
+    <span class="bloom" style="left:95.8%;top:17%;width:34px;--w:34px;--r:10deg"><svg viewBox="0 0 44 64"><use href="#bluebell"/></svg></span>
+    <span class="bloom" style="left:95%;top:32%;width:32px;--w:32px;--r:7deg"><svg viewBox="0 0 40 92"><use href="#tulipB"/></svg></span>
+    <span class="bloom wide-only" style="left:97.4%;top:35%;width:22px;--w:22px;--r:-10deg"><svg viewBox="0 0 40 40"><use href="#stars"/></svg></span>
+    <span class="bloom" style="left:4%;top:45%;width:32px;--w:32px;--r:-8deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
+    <span class="bloom wide-only" style="left:6.6%;top:47.5%;width:26px;--w:26px;--r:9deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
+    <span class="bloom" style="left:96.2%;top:58%;width:26px;--w:26px;--r:12deg"><svg viewBox="0 0 40 40"><use href="#stars"/></svg></span>
+    <span class="bloom" style="left:4.4%;top:70%;width:34px;--w:34px;--r:-5deg"><svg viewBox="0 0 40 92"><use href="#tulipB"/></svg></span>
+    <span class="bloom wide-only" style="left:7.2%;top:72.5%;width:26px;--w:26px;--r:-14deg"><svg viewBox="0 0 44 64"><use href="#bluebell"/></svg></span>
+    <span class="bloom" style="left:95.4%;top:82%;width:32px;--w:32px;--r:6deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
+    <span class="bloom" style="left:93%;top:84.5%;width:26px;--w:26px;--r:-10deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
+    <span class="bloom wide-only" style="left:4%;top:93%;width:22px;--w:22px;--r:0deg"><svg viewBox="0 0 40 40"><use href="#stars"/></svg></span>
   </div>
   <header>
     <div class="wrap nav">
@@ -225,7 +241,7 @@
 
         <figure class="piece" data-full="images/art-3.jpg" data-title="Portrait III">
           <div class="frame"><img src="images/art-3.jpg" alt="Expressive painted portrait of a young man with dark hair in warm yellow light" width="1537" height="2000" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait III</span><span class="meta">Acrylic</span></figcaption>
+          <figcaption class="caption"><span class="title">Portrait III</span><span class="meta">Acrylic, 2021</span></figcaption>
         </figure>
 
         <figure class="piece dummy">
@@ -235,7 +251,7 @@
 
         <figure class="piece" data-full="images/art-2.jpg" data-title="Portrait II">
           <div class="frame"><img src="images/art-2.jpg" alt="Painted portrait of two children lying head to head, smiling" width="2000" height="1486" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait II</span><span class="meta">Acrylic</span></figcaption>
+          <figcaption class="caption"><span class="title">Portrait II</span><span class="meta">Acrylic, 2025</span></figcaption>
         </figure>
 
         <figure class="piece dummy">
