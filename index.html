@@ -149,6 +149,7 @@
       <linearGradient id="leafG" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#6E9460"/><stop offset="1" stop-color="#A3C08C"/></linearGradient>
       <radialGradient id="fmnG" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#B7C9F6"/><stop offset="1" stop-color="#6483D9"/></radialGradient>
       <linearGradient id="bellG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9DB2EE"/><stop offset="1" stop-color="#4F6BC7"/></linearGradient>
+      <radialGradient id="bugG" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#EE6B55"/><stop offset="1" stop-color="#C63A2E"/></radialGradient>
       <radialGradient id="starG" cx=".5" cy="1" r="1"><stop offset="0" stop-color="#F2B637"/><stop offset="1" stop-color="#FBE08A"/></radialGradient>
       <symbol id="tulipY" viewBox="0 0 40 92">
         <g filter="url(#paint)" stroke-linecap="round" stroke-linejoin="round">
@@ -195,6 +196,20 @@
           <ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(22.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(67.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(112.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(157.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(202.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(247.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(292.5 14 15)" fill="url(#starG)"/><ellipse cx="14" cy="8.95" rx="2.20" ry="5.50" transform="rotate(337.5 14 15)" fill="url(#starG)"/><circle cx="14" cy="15" r="2.20" fill="#D98E1E"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(22.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(67.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(112.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(157.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(202.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(247.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(292.5 28.5 19.5)" fill="url(#starG)"/><ellipse cx="28.5" cy="15.38" rx="1.50" ry="3.75" transform="rotate(337.5 28.5 19.5)" fill="url(#starG)"/><circle cx="28.5" cy="19.5" r="1.50" fill="#D98E1E"/>
         </g>
       </symbol>
+      <symbol id="ladybug" viewBox="0 0 24 24">
+        <g filter="url(#paint)">
+          <path d="M9.2 5.6 L7.4 3.4 M14.8 5.6 L16.6 3.4" stroke="#2A2522" stroke-width=".8" stroke-linecap="round"/>
+          <path d="M6.2 11 L3.8 10 M6 14.5 L3.6 15.4 M7.4 17.8 L5.6 19.8 M17.8 11 L20.2 10 M18 14.5 L20.4 15.4 M16.6 17.8 L18.4 19.8" stroke="#2A2522" stroke-width=".75" stroke-linecap="round"/>
+          <ellipse cx="12" cy="7.4" rx="3.6" ry="2.6" fill="#2A2522"/>
+          <ellipse cx="12" cy="13.6" rx="6.4" ry="7" fill="url(#bugG)"/>
+          <path d="M12 7.2 L12 20.5" stroke="#2A2522" stroke-width=".7"/>
+          <circle cx="9" cy="11.2" r="1.25" fill="#2A2522"/><circle cx="15" cy="11.2" r="1.25" fill="#2A2522"/>
+          <circle cx="8.4" cy="15.6" r="1.1" fill="#2A2522"/><circle cx="15.6" cy="15.6" r="1.1" fill="#2A2522"/>
+          <circle cx="10.4" cy="18.6" r=".8" fill="#2A2522"/><circle cx="13.6" cy="18.6" r=".8" fill="#2A2522"/>
+          <path d="M8.2 9.4 C8.8 8.6 9.8 8.2 10.6 8.2" stroke="#F7B7A6" stroke-width=".7" fill="none" stroke-linecap="round" opacity=".85"/>
+          <circle cx="10.8" cy="6.8" r=".55" fill="#FFFFFF"/><circle cx="13.2" cy="6.8" r=".55" fill="#FFFFFF"/>
+        </g>
+      </symbol>
     </defs>
   </svg>
   <div class="blooms" aria-hidden="true">
@@ -211,6 +226,26 @@
     <span class="bloom" style="left:95.4%;top:82%;width:32px;--w:32px;--r:6deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
     <span class="bloom" style="left:93%;top:84.5%;width:26px;--w:26px;--r:-10deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
     <span class="bloom wide-only" style="left:4%;top:93%;width:22px;--w:22px;--r:0deg"><svg viewBox="0 0 40 40"><use href="#stars"/></svg></span>
+    <span class="bloom" style="left:2.6%;top:3.2%;width:20px;--w:20px;--r:14deg"><svg viewBox="0 0 40 40"><use href="#stars"/></svg></span>
+    <span class="bloom" style="left:5.4%;top:5.8%;width:19px;--w:19px;--r:25deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom wide-only" style="left:93.8%;top:14.5%;width:26px;--w:26px;--r:-9deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
+    <span class="bloom wide-only" style="left:97.5%;top:22%;width:18px;--w:18px;--r:-40deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom" style="left:2.8%;top:25%;width:30px;--w:30px;--r:-8deg"><svg viewBox="0 0 44 64"><use href="#bluebell"/></svg></span>
+    <span class="bloom wide-only" style="left:6.2%;top:27.5%;width:24px;--w:24px;--r:10deg"><svg viewBox="0 0 40 92"><use href="#tulipB"/></svg></span>
+    <span class="bloom" style="left:5%;top:31%;width:18px;--w:18px;--r:70deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom wide-only" style="left:93.2%;top:40.5%;width:26px;--w:26px;--r:12deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
+    <span class="bloom" style="left:96.4%;top:46%;width:30px;--w:30px;--r:4deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
+    <span class="bloom wide-only" style="left:2.4%;top:52%;width:17px;--w:17px;--r:-20deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom" style="left:93.6%;top:55.5%;width:18px;--w:18px;--r:130deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom" style="left:3.2%;top:60%;width:22px;--w:22px;--r:8deg"><svg viewBox="0 0 40 40"><use href="#stars"/></svg></span>
+    <span class="bloom wide-only" style="left:6%;top:62.5%;width:24px;--w:24px;--r:-6deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
+    <span class="bloom" style="left:97%;top:67%;width:30px;--w:30px;--r:12deg"><svg viewBox="0 0 44 64"><use href="#bluebell"/></svg></span>
+    <span class="bloom wide-only" style="left:94.6%;top:70%;width:26px;--w:26px;--r:-8deg"><svg viewBox="0 0 40 92"><use href="#tulipB"/></svg></span>
+    <span class="bloom" style="left:3%;top:79%;width:28px;--w:28px;--r:5deg"><svg viewBox="0 0 40 92"><use href="#tulipY"/></svg></span>
+    <span class="bloom" style="left:6.2%;top:81.5%;width:18px;--w:18px;--r:-60deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom" style="left:97.4%;top:91.5%;width:28px;--w:28px;--r:-4deg"><svg viewBox="0 0 40 92"><use href="#tulipB"/></svg></span>
+    <span class="bloom wide-only" style="left:94.8%;top:94%;width:17px;--w:17px;--r:35deg"><svg viewBox="0 0 24 24"><use href="#ladybug"/></svg></span>
+    <span class="bloom" style="left:6.8%;top:96%;width:24px;--w:24px;--r:10deg"><svg viewBox="0 0 46 56"><use href="#fmnSprig"/></svg></span>
   </div>
   <header>
     <div class="wrap nav">
@@ -272,7 +307,7 @@
         <img class="portrait" src="images/emily.jpg" alt="Emily Fang in Paris, smiling, wearing a black leather jacket and a striped top" width="1000" height="1250" loading="lazy">
       </div>
       <div>
-        <p>I'm a student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
+        <p>I'm a fourth-year student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
         <p>In my free time, I enjoy philosophy and travel. See my blog, <a class="inline-link" href="https://emi-hana.github.io/">The Wandering Mind</a>, to follow my journey.</p>
       </div>
     </section>
