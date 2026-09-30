@@ -90,6 +90,13 @@
     .split p { color: #444; max-width: 58ch; }
     .split p + p { margin-top: 16px; }
     .about-side { display: grid; gap: 24px; align-content: start; }
+    .portrait-link { position: relative; display: block; max-width: 280px; cursor: pointer; }
+    .portrait-link .portrait { transition: opacity .35s ease; }
+    .portrait-cta { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; color: var(--blue); letter-spacing: .02em; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+    .portrait-cta::after { content: ""; position: absolute; left: 50%; bottom: calc(50% - 22px); width: 64px; height: 1px; background: currentColor; transform: translateX(-50%); }
+    .portrait-link.revealed .portrait { opacity: .18; }
+    .portrait-link.revealed .portrait-cta { opacity: 1; }
+    .portrait-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
     .portrait { width: 100%; max-width: 280px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
     .inline-link { color: var(--blue); border-bottom: 1px solid currentColor; }
     .contact-link {
@@ -205,7 +212,10 @@
     <section id="about" class="split">
       <div class="about-side">
         <h2>About</h2>
-        <img class="portrait" src="images/emily.jpg" alt="Emily Fang in Paris, smiling, wearing a black leather jacket and a striped top" width="1000" height="1250" loading="lazy">
+        <a class="portrait-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1" target="_blank" rel="noopener" aria-label="Learn more about Emily">
+          <img class="portrait" src="images/emily.jpg" alt="Emily Fang in Paris, smiling, wearing a black leather jacket and a striped top" width="1000" height="1250" loading="lazy">
+          <span class="portrait-cta" aria-hidden="true">Learn More</span>
+        </a>
       </div>
       <div>
         <p>I'm a fourth-year Psychology student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
@@ -252,6 +262,17 @@
     const close = () => lb.classList.remove('open');
     lb.addEventListener('click', close);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+  <script>
+    // First click on the About photo fades it and shows "Learn More"; the second click follows the link.
+    (function () {
+      const link = document.querySelector('.portrait-link');
+      if (!link) return;
+      link.addEventListener('click', (e) => {
+        if (!link.classList.contains('revealed')) { e.preventDefault(); link.classList.add('revealed'); }
+      });
+      document.addEventListener('click', (e) => { if (!link.contains(e.target)) link.classList.remove('revealed'); });
+    })();
   </script>
 </body>
 </html>
