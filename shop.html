@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Emily Fang | Art Portfolio</title>
+  <title>Shop | Emily Fang</title>
   <link rel="icon" href="ef-favicon.svg" type="image/svg+xml">
   <meta name="description" content="Paintings and portraits by Emily Fang.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -147,6 +147,21 @@
       .intro { padding: 64px 0 48px; }
       .split { grid-template-columns: 1fr; gap: 16px; padding: 64px 0; }
     }
+    .shop-hero { padding: 80px 0 48px; display: grid; gap: 14px; }
+    .shop-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(40px, 6vw, 64px); line-height: 1.05; }
+    .shop-hero h1 em { color: var(--blue); }
+    .shop-hero p { color: var(--muted); max-width: 52ch; }
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 32px; padding-bottom: 72px; }
+    .product { display: grid; gap: 10px; }
+    .product .img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--placeholder); }
+    .product .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge { position: absolute; top: 12px; left: 12px; background: rgba(251, 250, 248, .92); color: var(--blue); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+    .product .name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; }
+    .product .kind { font-size: 13px; color: var(--muted); }
+    .product .buy { justify-self: start; font: inherit; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 2px; cursor: not-allowed; }
+    .shop-note { border-top: 1px solid var(--line); padding: 48px 0 88px; display: grid; gap: 10px; }
+    .shop-note h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 30px; }
+    .shop-note p { color: #444; max-width: 58ch; }
   </style>
 </head>
 <body>
@@ -164,87 +179,59 @@
   </div>
   <header>
     <div class="wrap nav">
-      <a href="#" class="logo"><img src="images/ef-logo.svg" alt="" width="26" height="40"><span class="logo-name">Emily Fang<span>.</span></span></a>
+      <a href="index.html" class="logo"><img src="images/ef-logo.svg" alt="" width="26" height="40"><span class="logo-name">Emily Fang<span>.</span></span></a>
       <nav>
         <ul>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="shop.html">Shop</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="shop.html" aria-current="page" style="color: var(--blue)">Shop</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="intro">
-      <h1>Paintings &amp; <em>portraits</em>.</h1>
-      <p>A selection of recent work in acrylic and embroidery, emphasizing human-centered interest and self-expression. More pieces coming soon 💙.</p>
+    <section class="shop-hero">
+      <div class="section-label">Shop</div>
+      <h1>Prints &amp; <em>apparel</em>.</h1>
+      <p>Prints of my paintings and pieces from my embroidery work. The shop is opening soon 💙.</p>
     </section>
-
-    <section id="work">
-      <div class="section-label">Selected work</div>
-      <div class="gallery">
-        <figure class="piece" data-full="images/art-1.jpg" data-title="Portrait I">
-          <div class="frame"><img src="images/art-1.jpg" alt="Painted portrait of a man in a blue suit adjusting his tie" width="1545" height="2000" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait I</span><span class="meta">Acrylic, 2026</span></figcaption>
-        </figure>
-
-        <figure class="piece" data-full="images/art-3.jpg" data-title="Portrait III">
-          <div class="frame"><img src="images/art-3.jpg" alt="Expressive painted portrait of a young man with dark hair in warm yellow light" width="1537" height="2000" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait III</span><span class="meta">Acrylic, 2021</span></figcaption>
-        </figure>
-
-        <figure class="piece" data-full="images/shirt-emblem.jpg" data-title="Shirt Design">
-          <div class="frame"><img src="images/shirt-emblem.jpg" alt="Ultramarine embroidered guinea pig emblem on white fabric" width="1200" height="1200" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Shirt Design</span><span class="meta">Embroidery</span></figcaption>
-        </figure>
-
-        <figure class="piece" data-full="images/art-2.jpg" data-title="Portrait II">
-          <div class="frame"><img src="images/art-2.jpg" alt="Painted portrait of two children lying head to head, smiling" width="2000" height="1486" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait II</span><span class="meta">Acrylic, 2025</span></figcaption>
-        </figure>
-
-
-        <figure class="piece" data-full="images/art-4-v2.jpg" data-title="Portrait IV - “Bonding”">
-          <div class="frame"><img src="images/art-4-v2.jpg" alt="Painting of a man in a red jacket holding a baby in a yellow hat and blue outfit; his face is painted as a landscape of hills and a yellow field" width="1572" height="2000" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait IV - “Bonding”</span><span class="meta">Acrylic, 2026</span></figcaption>
-        </figure>
-        <figure class="piece shop-piece">
-          <a class="frame ph shop-tile" href="shop.html" style="aspect-ratio: 4 / 5;">
-            <span class="shop-kicker">Now opening</span>
-            <span class="shop-word">Shop</span>
-            <span class="shop-sub">Prints &amp; apparel →</span>
-          </a>
-          <figcaption class="caption"><span class="title">Shop</span><span class="meta">Prints &amp; apparel</span></figcaption>
-        </figure>
-      </div>
+    <section class="products" aria-label="Products">
+        <article class="product">
+          <div class="img"><img src="images/art-1.jpg" alt="Portrait I" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="name">Portrait I</div>
+          <div class="kind">Art print</div>
+          <button class="buy" type="button" disabled>Coming soon</button>
+        </article>
+        <article class="product">
+          <div class="img"><img src="images/art-2.jpg" alt="Portrait II" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="name">Portrait II</div>
+          <div class="kind">Art print</div>
+          <button class="buy" type="button" disabled>Coming soon</button>
+        </article>
+        <article class="product">
+          <div class="img"><img src="images/art-3.jpg" alt="Portrait III" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="name">Portrait III</div>
+          <div class="kind">Art print</div>
+          <button class="buy" type="button" disabled>Coming soon</button>
+        </article>
+        <article class="product">
+          <div class="img"><img src="images/art-4-v2.jpg" alt="Portrait IV - “Bonding”" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="name">Portrait IV - “Bonding”</div>
+          <div class="kind">Art print</div>
+          <button class="buy" type="button" disabled>Coming soon</button>
+        </article>
+        <article class="product">
+          <div class="img"><img src="images/shirt-emblem.jpg" alt="Guinea Pig Tee" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="name">Guinea Pig Tee</div>
+          <div class="kind">Embroidered T-shirt</div>
+          <button class="buy" type="button" disabled>Coming soon</button>
+        </article>
     </section>
-
-    <section id="about" class="split">
-      <div class="about-side">
-        <h2>About</h2>
-        <a class="portrait-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1" target="_blank" rel="noopener" aria-label="Learn more about Emily">
-          <img class="portrait" src="images/emily.jpg" alt="Emily Fang in Paris, smiling, wearing a black leather jacket and a striped top" width="1000" height="1250" loading="lazy">
-          <span class="portrait-cta" aria-hidden="true">Learn More</span>
-        </a>
-      </div>
-      <div>
-        <p>I'm a fourth-year Psychology student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
-        <p>I am also interested in cognition, behavior, mental health, and the application of psychological research to complex human problems.</p>
-        <p>In my free time, I enjoy philosophy and travel. See my blog, <a class="inline-link" href="https://emi-hana.github.io/">The Wandering Mind</a>, to follow my journey.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="split">
-      <h2>Contact</h2>
-      <div>
-        <p>For commissions, inquiries, or just to say hello:</p>
-        <a class="contact-link" href="mailto:emilyfang2019@gmail.com">emilyfang2019@gmail.com</a>
-        <div class="socials">
-          <a href="#">Instagram</a>
-        </div>
-      </div>
+    <section class="shop-note">
+      <h2>Want something now?</h2>
+      <p>For early orders, commissions, or questions, email me at <a class="inline-link" href="mailto:emilyfang2019@gmail.com">emilyfang2019@gmail.com</a>.</p>
     </section>
   </main>
 
@@ -252,39 +239,5 @@
     <div class="wrap">© <span id="year">2026</span> Emily Fang</div>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="close" aria-label="Close">×</button>
-    <img alt="">
-    <div class="lb-caption"></div>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.lb-caption');
-    document.querySelectorAll('.piece[data-full]').forEach(p => {
-      p.addEventListener('click', () => {
-        lbImg.src = p.dataset.full;
-        lbImg.alt = p.querySelector('img').alt;
-        lbCap.textContent = p.dataset.title;
-        lb.classList.add('open');
-      });
-    });
-    const close = () => lb.classList.remove('open');
-    lb.addEventListener('click', close);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-  </script>
-  <script>
-    // First click on the About photo fades it and shows "Learn More"; the second click follows the link.
-    (function () {
-      const link = document.querySelector('.portrait-link');
-      if (!link) return;
-      link.addEventListener('click', (e) => {
-        if (!link.classList.contains('revealed')) { e.preventDefault(); link.classList.add('revealed'); }
-      });
-      document.addEventListener('click', (e) => { if (!link.contains(e.target)) link.classList.remove('revealed'); });
-    })();
-  </script>
 </body>
 </html>
