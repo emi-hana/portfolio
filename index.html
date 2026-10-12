@@ -34,8 +34,9 @@
     /* Header */
     header {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(12, 12, 12, 0.94);
+      background: rgba(251, 250, 248, 0.92);
       backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo {
@@ -54,9 +55,7 @@
       font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
       transition: color 0.2s;
     }
-    nav a { color: rgba(255, 255, 255, 0.85); }
-    nav a:hover, nav a[aria-current="page"] { color: #a8c1ff !important; }
-    .logo .logo-name, .logo .logo-name span { color: #fff; }
+    nav a:hover { color: var(--blue); }
 
     /* Intro */
     .intro { padding: 96px 0 72px; }
@@ -84,22 +83,6 @@
     #about h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
     #about .about-text { background: rgba(251,250,248,.94); padding: 32px 36px; align-self: start; }
     #work { padding-top: 72px; }
-
-    /* Black sections with white text */
-    .dark.full-bleed::before { background: #0f0f0f; }
-    .dark { color: #fff; }
-    #work .section-label {
-      font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: clamp(36px, 4.5vw, 52px);
-      line-height: 1; letter-spacing: -0.02em; color: #fff; margin-bottom: 40px;
-    }
-    #work .section-label::before { display: none; }
-    .dark .caption .title { color: #fff; }
-    .dark .caption .meta { color: rgba(255, 255, 255, 0.6); }
-    #contact.dark h2 { color: #fff; }
-    #contact.dark p { color: rgba(255, 255, 255, 0.85); }
-    #contact.dark .contact-link { color: #a8c1ff; }
-    #contact.dark .socials a { color: rgba(255, 255, 255, 0.6); }
-    #contact.dark .socials a:hover { color: #a8c1ff; }
 
     /* Gallery */
     .section-label {
@@ -153,7 +136,7 @@
     .socials a { color: var(--muted); }
     .socials a:hover { color: var(--blue); }
 
-    footer { background: #0f0f0f; color: rgba(255, 255, 255, 0.55) !important; padding: 28px 0; font-size: 12px; color: var(--muted); }
+    footer { padding: 28px 0; font-size: 12px; color: var(--muted); }
 
     /* Lightbox */
     .lightbox {
@@ -220,7 +203,7 @@
       <p>A selection of recent work in acrylic and embroidery, emphasizing human-centered interest and self-expression. More pieces coming soon 💙.</p>
     </section>
 
-    <section id="work" class="dark full-bleed">
+    <section id="work">
       <div class="section-label">Selected work</div>
       <div class="gallery">
         <figure class="piece" data-full="images/art-1.jpg" data-title="Portrait I">
@@ -284,7 +267,7 @@
       </div>
     </section>
 
-    <section id="contact" class="split dark full-bleed">
+    <section id="contact" class="split">
       <h2>Contact</h2>
       <div>
         <p>For commissions, inquiries, or just to say hello:</p>

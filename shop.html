@@ -34,8 +34,9 @@
     /* Header */
     header {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(12, 12, 12, 0.94);
+      background: rgba(251, 250, 248, 0.92);
       backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo {
@@ -54,9 +55,7 @@
       font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
       transition: color 0.2s;
     }
-    nav a { color: rgba(255, 255, 255, 0.85); }
-    nav a:hover, nav a[aria-current="page"] { color: #a8c1ff !important; }
-    .logo .logo-name, .logo .logo-name span { color: #fff; }
+    nav a:hover { color: var(--blue); }
 
     /* Intro */
     .intro { padding: 96px 0 72px; }
