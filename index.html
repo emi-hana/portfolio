@@ -96,19 +96,20 @@
     .grass-zone h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
     #contact .contact-card { padding: 32px 36px; align-self: start; }
     #about .about-text { padding: 32px 36px; align-self: start; }
-    /* Picnic-blanket text boxes: faint red gingham on a slightly tilted, soft-edged cloth */
+    /* Picnic-blanket text boxes: rounded cloth lying on the grass, faint coral gingham */
     .blanket { position: relative; isolation: isolate; }
     .blanket::before {
-      content: ""; position: absolute; inset: -8px; z-index: -1;
+      content: ""; position: absolute; inset: -14px -10px; z-index: -1;
       background:
-        linear-gradient(90deg, rgba(210, 45, 45, 0.11) 50%, transparent 50%) 0 0 / 36px 36px,
-        linear-gradient(rgba(210, 45, 45, 0.11) 50%, transparent 50%) 0 0 / 36px 36px,
-        rgba(255, 253, 249, 0.94);
-      border-radius: 26px 40px 20px 46px / 34px 20px 42px 24px;
-      transform: rotate(-1.6deg) skewX(-1.5deg);
-      box-shadow: 0 16px 34px rgba(20, 40, 10, 0.35);
+        linear-gradient(90deg, transparent 0 64%, rgba(226, 92, 76, 0.16) 64% 100%) 0 0 / 40px 40px,
+        linear-gradient(transparent 0 64%, rgba(226, 92, 76, 0.16) 64% 100%) 0 0 / 40px 40px,
+        rgba(255, 252, 247, 0.95);
+      border-radius: 34px;
+      border: 3px solid rgba(150, 70, 50, 0.25);
+      transform: perspective(1200px) rotateX(8deg) rotate(-2deg);
+      box-shadow: 0 18px 30px -8px rgba(20, 40, 10, 0.45);
     }
-    #contact .blanket::before { transform: rotate(1.4deg) skewX(1.5deg); border-radius: 40px 22px 44px 20px / 22px 38px 24px 40px; }
+    #contact .blanket::before { transform: perspective(1200px) rotateX(8deg) rotate(1.8deg); }
     #work { padding-top: 72px; }
     #work .section-label {
       font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: clamp(36px, 4.5vw, 52px);
