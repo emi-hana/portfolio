@@ -90,20 +90,19 @@
     #about .inline-link { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
     /* About and Contact share one grass background with a curved top edge */
     .grass-zone { padding-top: max(48px, 9vw); }
-    .grass-zone.full-bleed::before { background: url(images/lawn.jpg) center / cover; }
+    .grass-zone.full-bleed::before { background: #4a8a3c; }
     .grass-curve { position: absolute; left: 50%; top: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
     .grass-zone .split { padding-top: 40px; }
     .grass-zone h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
     #contact .contact-card { padding: 32px 36px; align-self: start; }
     #about .about-text { padding: 32px 36px; align-self: start; }
-    /* Picnic-blanket text boxes: rounded cloth lying on the grass, faint coral gingham */
+    /* Picnic-blanket text boxes: the real picnic cloth photo, softened so text stays readable */
     .blanket { position: relative; isolation: isolate; }
     .blanket::before {
       content: ""; position: absolute; inset: -14px -10px; z-index: -1;
       background:
-        linear-gradient(90deg, transparent 0 64%, rgba(226, 92, 76, 0.16) 64% 100%) 0 0 / 40px 40px,
-        linear-gradient(transparent 0 64%, rgba(226, 92, 76, 0.16) 64% 100%) 0 0 / 40px 40px,
-        rgba(255, 252, 247, 0.95);
+        linear-gradient(rgba(255, 252, 247, 0.62), rgba(255, 252, 247, 0.62)),
+        url(images/picnic-cloth.jpg) center / cover;
       border-radius: 34px;
       border: 3px solid rgba(150, 70, 50, 0.25);
       transform: perspective(1200px) rotateX(8deg) rotate(-2deg);
