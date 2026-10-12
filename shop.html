@@ -34,9 +34,7 @@
     /* Header */
     header {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(251, 250, 248, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
+      background: var(--blue);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo {
@@ -55,7 +53,11 @@
       font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
       transition: color 0.2s;
     }
-    nav a:hover { color: var(--blue); }
+    /* Blue top bar: white logo and menu */
+    .logo img { filter: brightness(0) invert(1); }
+    .logo .logo-name, .logo .logo-name span { color: #fff; }
+    nav a { color: rgba(255, 255, 255, 0.85); padding-bottom: 3px; border-bottom: 1.5px solid transparent; }
+    nav a:hover, nav a[aria-current="page"] { color: #fff !important; border-bottom-color: #fff; }
 
     /* Intro */
     .intro { padding: 96px 0 72px; }
