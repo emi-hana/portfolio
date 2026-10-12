@@ -94,8 +94,21 @@
     .grass-curve { position: absolute; left: 50%; top: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
     .grass-zone .split { padding-top: 40px; }
     .grass-zone h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
-    #contact .contact-card { background: rgba(251,250,248,.94); padding: 32px 36px; align-self: start; }
-    #about .about-text { background: rgba(251,250,248,.94); padding: 32px 36px; align-self: start; }
+    #contact .contact-card { padding: 32px 36px; align-self: start; }
+    #about .about-text { padding: 32px 36px; align-self: start; }
+    /* Picnic-blanket text boxes: faint red gingham on a slightly tilted, soft-edged cloth */
+    .blanket { position: relative; isolation: isolate; }
+    .blanket::before {
+      content: ""; position: absolute; inset: -8px; z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(210, 45, 45, 0.11) 50%, transparent 50%) 0 0 / 36px 36px,
+        linear-gradient(rgba(210, 45, 45, 0.11) 50%, transparent 50%) 0 0 / 36px 36px,
+        rgba(255, 253, 249, 0.94);
+      border-radius: 26px 40px 20px 46px / 34px 20px 42px 24px;
+      transform: rotate(-1.6deg) skewX(-1.5deg);
+      box-shadow: 0 16px 34px rgba(20, 40, 10, 0.35);
+    }
+    #contact .blanket::before { transform: rotate(1.4deg) skewX(1.5deg); border-radius: 40px 22px 44px 20px / 22px 38px 24px 40px; }
     #work { padding-top: 72px; }
     #work .section-label {
       font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: clamp(36px, 4.5vw, 52px);
@@ -294,7 +307,7 @@
           <span class="portrait-cta" aria-hidden="true">Learn More</span>
         </a>
       </div>
-      <div class="about-text">
+      <div class="about-text blanket">
         <p>I'm a fourth-year Psychology student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
         <p>I am also interested in cognition, behavior, mental health, and the application of psychological research to complex human problems.</p>
         <p>In my free time, I enjoy philosophy and travel. See my blog, <a class="inline-link" href="https://blog.emilyfang.me/">The Wandering Mind</a>, to follow my journey.</p>
@@ -303,7 +316,7 @@
 
     <section id="contact" class="split">
       <h2>Contact</h2>
-      <div class="contact-card">
+      <div class="contact-card blanket">
         <p>For commissions, inquiries, or just to say hello:</p>
         <a class="contact-link" href="mailto:hello@emilyfang.me">hello@emilyfang.me</a>
         <div class="socials">
