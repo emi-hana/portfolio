@@ -71,7 +71,7 @@
     .intro h1.sans em { font-style: normal; }
     .intro p { margin-top: 20px; color: var(--muted); max-width: 46ch; }
 
-    /* Full-width section backgrounds and grass dividers */
+    /* Full-width section backgrounds */
     html { overflow-x: clip; }
     .full-bleed { position: relative; isolation: isolate; }
     .full-bleed::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); z-index: -1; }
@@ -88,26 +88,6 @@
     .hero-curve { position: absolute; left: 50%; bottom: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
     #about .portrait-link { background: var(--bg); }
     #about .inline-link { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
-    /* About and Contact share one grass background with a curved top edge */
-    .grass-zone { padding-top: max(48px, 9vw); }
-    .grass-zone.full-bleed::before { background: url(images/meadow.jpg) center / cover; }
-    .grass-curve { position: absolute; left: 50%; top: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
-    .grass-zone .split { padding-top: 40px; }
-    .grass-zone h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
-    #contact .contact-card { padding: 32px 36px; align-self: start; }
-    #about .about-text { padding: 32px 36px; align-self: start; }
-    /* Picnic-blanket text boxes: the real blanket photo (board and strawberries top left), text kept to the right of them */
-    .blanket { position: relative; isolation: isolate; aspect-ratio: 3 / 2; padding-left: 30% !important; }
-    .blanket::before {
-      content: ""; position: absolute; inset: -10px; z-index: -1;
-      background:
-        linear-gradient(to right, transparent 0 26%, rgba(255, 252, 247, 0.6) 31%),
-        url(images/picnic-blanket.jpg) left top / cover;
-      border-radius: 7% / 10%;
-      transform: rotate(-1.5deg);
-      box-shadow: 0 18px 30px -8px rgba(20, 40, 10, 0.45);
-    }
-    #contact .blanket::before { transform: rotate(1.5deg); }
     #work { padding-top: 72px; }
     #work .section-label {
       font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: clamp(36px, 4.5vw, 52px);
@@ -296,8 +276,6 @@
       </div>
     </section>
 
-    <div class="grass-zone full-bleed">
-      <svg class="grass-curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 L1440 0 L1440 4 C 920 8, 440 50, 0 120 Z" fill="#fbfaf8"/></svg>
     <section id="about" class="split">
       <div class="about-side">
         <h2>About</h2>
@@ -306,7 +284,7 @@
           <span class="portrait-cta" aria-hidden="true">Learn More</span>
         </a>
       </div>
-      <div class="about-text blanket">
+      <div>
         <p>I'm a fourth-year Psychology student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
         <p>I am also interested in cognition, behavior, mental health, and the application of psychological research to complex human problems.</p>
         <p>In my free time, I enjoy philosophy and travel. See my blog, <a class="inline-link" href="https://blog.emilyfang.me/">The Wandering Mind</a>, to follow my journey.</p>
@@ -315,7 +293,7 @@
 
     <section id="contact" class="split">
       <h2>Contact</h2>
-      <div class="contact-card blanket">
+      <div>
         <p>For commissions, inquiries, or just to say hello:</p>
         <a class="contact-link" href="mailto:hello@emilyfang.me">hello@emilyfang.me</a>
         <div class="socials">
@@ -323,7 +301,6 @@
         </div>
       </div>
     </section>
-    </div>
   </main>
 
   <footer>
