@@ -8,14 +8,14 @@
   <meta name="description" content="Paintings and portraits by Emily Fang.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fbfaf8;
       --text: #1c1c1c;
       --muted: #7a7a7a;
       --line: #e6e3de;
-      --blue: #3553a8;
+      --blue: #0047ab;
       --placeholder: #e4ebf7;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -76,14 +76,14 @@
     .full-bleed { position: relative; isolation: isolate; }
     .full-bleed::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); z-index: -1; }
     /* Blue hero with a curved bottom edge */
-    .intro.full-bleed { min-height: calc(88vh - 68px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 0 140px; }
+    .intro.full-bleed { min-height: calc(72vh - 68px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 56px 0 120px; }
     .intro.full-bleed::before { background: var(--blue); }
-    .intro.full-bleed h1 { color: #fff; max-width: none; font-size: clamp(44px, 8vw, 104px); line-height: 1.02; }
+    .intro.full-bleed h1 { color: #fff; max-width: none; font-weight: 300; letter-spacing: -0.01em; font-size: clamp(40px, 6.5vw, 88px); line-height: 1.05; }
     .intro.full-bleed h1 em { color: #ffd76e; }
     .intro .mark { position: relative; display: inline-block; }
     .intro .mark svg { position: absolute; left: -2%; width: 104%; height: 0.32em; bottom: -0.18em; overflow: visible; }
-    .intro .mark path { fill: none; stroke: #ffd76e; stroke-width: 5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
-    .intro .mark.squiggle path { stroke: #fff; stroke-width: 3.5; }
+    .intro .mark path { fill: none; stroke: #ffd76e; stroke-width: 2.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+    .intro .mark.squiggle path { stroke: #fff; stroke-width: 2; }
     .intro.full-bleed p { color: rgba(255, 255, 255, 0.88); margin: 36px auto 0; font-size: 17px; }
     .hero-curve { position: absolute; left: 50%; bottom: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
     #about .portrait-link { background: var(--bg); }
@@ -265,14 +265,6 @@
         <figure class="piece" data-full="images/art-6.jpg" data-title="Abstract I">
           <div class="frame"><img src="images/art-6.jpg" alt="Abstract painting of loose color blocks in ochre, red and white with a dark blue line and a blue circle set in orange" width="1470" height="2000" loading="lazy"></div>
           <figcaption class="caption"><span class="title">Abstract I</span><span class="meta">Acrylic, 2023</span></figcaption>
-        </figure>
-        <figure class="piece shop-piece">
-          <a class="frame ph shop-tile" href="shop.html" style="aspect-ratio: 4 / 5;">
-            <span class="shop-kicker">Now opening</span>
-            <span class="shop-word">Shop</span>
-            <span class="shop-sub">Prints &amp; apparel →</span>
-          </a>
-          <figcaption class="caption"><span class="title">Shop</span><span class="meta">Prints &amp; apparel</span></figcaption>
         </figure>
       </div>
     </section>
