@@ -8,7 +8,7 @@
   <meta name="description" content="Paintings and portraits by Emily Fang.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fbfaf8;
@@ -40,13 +40,15 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo {
-      font-family: "Cormorant Garamond", Georgia, serif;
+      font-family: "Inter Tight", "Inter", sans-serif;
       font-size: 24px; font-weight: 500; letter-spacing: 0.01em;
     }
     .logo span { color: var(--blue); }
     .logo { display: flex; align-items: center; gap: 12px; }
     .logo img { height: 40px; width: auto; display: block; }
-    .logo-name { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; }
+    .logo-name { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; white-space: nowrap; }
+    @media (max-width: 720px) { .logo-name { font-size: 15px; } .logo { gap: 8px; } .logo img { height: 32px; } nav ul { gap: 12px !important; } nav a { font-size: 11px; letter-spacing: 0.05em; } }
+    @media (max-width: 440px) { .logo-name { display: none; } }
     nav ul { display: flex; gap: 32px; list-style: none; }
     nav a {
       font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
@@ -57,7 +59,7 @@
     /* Intro */
     .intro { padding: 96px 0 72px; }
     .intro h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
+      font-family: "Inter Tight", "Inter", sans-serif;
       font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.1;
       max-width: 14ch;
     }
@@ -85,22 +87,22 @@
     .shop-tile { flex-direction: column; gap: 10px; text-decoration: none; transition: background .25s; }
     .shop-tile:hover { background: #d6e1f3; }
     .shop-tile .shop-kicker { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #7f94c6; }
-    .shop-tile .shop-word { font-family: "Cormorant Garamond", Georgia, serif; font-size: 44px; letter-spacing: .02em; text-transform: none; color: var(--blue); line-height: 1; }
+    .shop-tile .shop-word { font-family: "Inter Tight", "Inter", sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; color: var(--blue); line-height: 1; }
     .shop-tile .shop-sub { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
     .shop-tile:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
     .caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; font-size: 13px; }
-    .caption .title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-style: italic; }
+    .caption .title { font-family: "Inter Tight", "Inter", sans-serif; font-size: 15px; font-weight: 500; }
     .caption .meta { color: var(--muted); white-space: nowrap; }
 
     /* About & Contact */
     .split { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding: 88px 0; border-top: 1px solid var(--line); }
-    .split h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 36px; }
+    .split h2 { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: clamp(36px, 4.5vw, 52px); line-height: 1; text-transform: uppercase; letter-spacing: -0.02em; }
     .split p { color: #444; max-width: 58ch; }
     .split p + p { margin-top: 16px; }
     .about-side { display: grid; gap: 24px; align-content: start; }
     .portrait-link { position: relative; display: block; max-width: 280px; cursor: pointer; }
     .portrait-link .portrait { transition: opacity .35s ease; }
-    .portrait-cta { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; color: var(--blue); letter-spacing: .02em; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+    .portrait-cta { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: "Inter Tight", "Inter", sans-serif; font-size: 22px; font-weight: 600; text-transform: uppercase; color: var(--blue); letter-spacing: -0.01em; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
     .portrait-cta::after { content: ""; position: absolute; left: 50%; bottom: calc(50% - 22px); width: 64px; height: 1px; background: currentColor; transform: translateX(-50%); }
     .portrait-link.revealed .portrait { opacity: .18; }
     .portrait-link.revealed .portrait-cta { opacity: 1; }
@@ -109,7 +111,7 @@
     .inline-link { color: var(--blue); border-bottom: 1px solid currentColor; }
     .contact-link {
       display: inline-block; margin-top: 8px;
-      font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px;
+      font-family: "Inter Tight", "Inter", sans-serif; font-size: 26px; font-weight: 600;
       color: var(--blue); border-bottom: 1px solid currentColor;
     }
     .socials { margin-top: 24px; display: flex; gap: 24px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -127,7 +129,7 @@
     }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 100%; max-height: 82vh; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
-    .lightbox .lb-caption { margin-top: 16px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; font-style: italic; }
+    .lightbox .lb-caption { margin-top: 16px; font-family: "Inter Tight", "Inter", sans-serif; font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: -0.01em; }
     .lightbox .close {
       position: absolute; top: 20px; right: 24px; background: none; border: 0;
       font-size: 28px; color: var(--muted); cursor: pointer;
@@ -149,7 +151,8 @@
       .split { grid-template-columns: 1fr; gap: 16px; padding: 64px 0; }
     }
     .shop-hero { padding: 80px 0 48px; display: grid; gap: 14px; }
-    .shop-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(40px, 6vw, 64px); line-height: 1.05; }
+    .shop-hero h1 { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 600; font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; }
+    .shop-hero h1 em { font-style: normal; }
     .shop-hero h1 em { color: var(--blue); }
     .shop-hero p { color: var(--muted); max-width: 52ch; }
     .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 32px; padding-bottom: 72px; }
@@ -157,11 +160,11 @@
     .product .img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--placeholder); }
     .product .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .badge { position: absolute; top: 12px; left: 12px; background: rgba(251, 250, 248, .92); color: var(--blue); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
-    .product .name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; }
+    .product .name { font-family: "Inter Tight", "Inter", sans-serif; font-size: 18px; font-weight: 600; }
     .product .kind { font-size: 13px; color: var(--muted); }
     .product .buy { justify-self: start; font: inherit; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 2px; cursor: not-allowed; }
     .shop-note { border-top: 1px solid var(--line); padding: 48px 0 88px; display: grid; gap: 10px; }
-    .shop-note h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 30px; }
+    .shop-note h2 { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; letter-spacing: -0.02em; }
     .shop-note p { color: #444; max-width: 58ch; }
   </style>
 </head>

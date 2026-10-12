@@ -8,7 +8,7 @@
   <meta name="description" content="Paintings and portraits by Emily Fang.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fbfaf8;
@@ -40,13 +40,15 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo {
-      font-family: "Cormorant Garamond", Georgia, serif;
+      font-family: "Inter Tight", "Inter", sans-serif;
       font-size: 24px; font-weight: 500; letter-spacing: 0.01em;
     }
     .logo span { color: var(--blue); }
     .logo { display: flex; align-items: center; gap: 12px; }
     .logo img { height: 40px; width: auto; display: block; }
-    .logo-name { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; }
+    .logo-name { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; white-space: nowrap; }
+    @media (max-width: 720px) { .logo-name { font-size: 15px; } .logo { gap: 8px; } .logo img { height: 32px; } nav ul { gap: 12px !important; } nav a { font-size: 11px; letter-spacing: 0.05em; } }
+    @media (max-width: 440px) { .logo-name { display: none; } }
     nav ul { display: flex; gap: 32px; list-style: none; }
     nav a {
       font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
@@ -57,7 +59,7 @@
     /* Intro */
     .intro { padding: 96px 0 72px; }
     .intro h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
+      font-family: "Inter Tight", "Inter", sans-serif;
       font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.1;
       max-width: 14ch;
     }
@@ -65,6 +67,19 @@
     .intro h1.sans { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: -0.02em; font-size: clamp(34px, 5.2vw, 58px); }
     .intro h1.sans em { font-style: normal; }
     .intro p { margin-top: 20px; color: var(--muted); max-width: 46ch; }
+
+    /* Full-width section backgrounds and grass dividers */
+    html { overflow-x: clip; }
+    .full-bleed { position: relative; isolation: isolate; clip-path: inset(0 -100vw); }
+    .full-bleed::before { content: ""; position: absolute; top: -40%; bottom: -40%; left: 50%; width: 100vw; transform: translate(-50%, var(--py, 0px)); z-index: -1; will-change: transform; }
+    .intro.full-bleed::before { background: url(images/clouds.jpg) center / cover no-repeat; }
+    .intro.full-bleed p { color: #2f3e57; }
+    #about .portrait-link { background: var(--bg); }
+    #about .inline-link { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
+    #about.full-bleed::before { background: url(images/grass.jpg) center / cover; }
+    #about h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
+    #about .about-text { background: rgba(251,250,248,.94); padding: 32px 36px; align-self: start; }
+    #work { padding-top: 72px; }
 
     /* Gallery */
     .section-label {
@@ -87,22 +102,22 @@
     .shop-tile { flex-direction: column; gap: 10px; text-decoration: none; transition: background .25s; }
     .shop-tile:hover { background: #d6e1f3; }
     .shop-tile .shop-kicker { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #7f94c6; }
-    .shop-tile .shop-word { font-family: "Cormorant Garamond", Georgia, serif; font-size: 44px; letter-spacing: .02em; text-transform: none; color: var(--blue); line-height: 1; }
+    .shop-tile .shop-word { font-family: "Inter Tight", "Inter", sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; color: var(--blue); line-height: 1; }
     .shop-tile .shop-sub { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
     .shop-tile:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
     .caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; font-size: 13px; }
-    .caption .title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-style: italic; }
+    .caption .title { font-family: "Inter Tight", "Inter", sans-serif; font-size: 15px; font-weight: 500; }
     .caption .meta { color: var(--muted); white-space: nowrap; }
 
     /* About & Contact */
-    .split { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding: 88px 0; border-top: 1px solid var(--line); }
-    .split h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 36px; }
+    .split { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding: 88px 0; }
+    .split h2 { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: clamp(36px, 4.5vw, 52px); line-height: 1; text-transform: uppercase; letter-spacing: -0.02em; }
     .split p { color: #444; max-width: 58ch; }
     .split p + p { margin-top: 16px; }
     .about-side { display: grid; gap: 24px; align-content: start; }
     .portrait-link { position: relative; display: block; max-width: 280px; cursor: pointer; }
     .portrait-link .portrait { transition: opacity .35s ease; }
-    .portrait-cta { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; color: var(--blue); letter-spacing: .02em; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+    .portrait-cta { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: "Inter Tight", "Inter", sans-serif; font-size: 22px; font-weight: 600; text-transform: uppercase; color: var(--blue); letter-spacing: -0.01em; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
     .portrait-cta::after { content: ""; position: absolute; left: 50%; bottom: calc(50% - 22px); width: 64px; height: 1px; background: currentColor; transform: translateX(-50%); }
     .portrait-link.revealed .portrait { opacity: .18; }
     .portrait-link.revealed .portrait-cta { opacity: 1; }
@@ -111,14 +126,14 @@
     .inline-link { color: var(--blue); border-bottom: 1px solid currentColor; }
     .contact-link {
       display: inline-block; margin-top: 8px;
-      font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px;
+      font-family: "Inter Tight", "Inter", sans-serif; font-size: 26px; font-weight: 600;
       color: var(--blue); border-bottom: 1px solid currentColor;
     }
     .socials { margin-top: 24px; display: flex; gap: 24px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
     .socials a { color: var(--muted); }
     .socials a:hover { color: var(--blue); }
 
-    footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 12px; color: var(--muted); }
+    footer { padding: 28px 0; font-size: 12px; color: var(--muted); }
 
     /* Lightbox */
     .lightbox {
@@ -129,7 +144,7 @@
     }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 100%; max-height: 82vh; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
-    .lightbox .lb-caption { margin-top: 16px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; font-style: italic; }
+    .lightbox .lb-caption { margin-top: 16px; font-family: "Inter Tight", "Inter", sans-serif; font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: -0.01em; }
     .lightbox .close {
       position: absolute; top: 20px; right: 24px; background: none; border: 0;
       font-size: 28px; color: var(--muted); cursor: pointer;
@@ -139,7 +154,7 @@
     body { position: relative; }
     header, main, footer { position: relative; z-index: 1; }
     header { z-index: 10; }
-    .blooms { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .blooms { position: absolute; inset: 0; z-index: 5; pointer-events: none; overflow: hidden; }
     .bloom { position: absolute; transform: translate(-50%, -50%) rotate(var(--r, 0deg)); opacity: .9; }
     .bloom svg, .bloom img { display: block; width: 100%; height: auto; overflow: visible; }
     @media (max-width: 1100px) { .bloom { opacity: .45; } .bloom.wide-only { display: none; } }
@@ -180,7 +195,7 @@
   </header>
 
   <main class="wrap">
-    <section class="intro">
+    <section class="intro full-bleed">
       <h1 class="sans">Paintings &amp; <em>portraits</em>.</h1>
       <p>A selection of recent work in acrylic and embroidery, emphasizing human-centered interest and self-expression. More pieces coming soon 💙.</p>
     </section>
@@ -234,7 +249,7 @@
       </div>
     </section>
 
-    <section id="about" class="split">
+    <section id="about" class="split full-bleed">
       <div class="about-side">
         <h2>About</h2>
         <a class="portrait-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1" target="_blank" rel="noopener" aria-label="Learn more about Emily">
@@ -242,7 +257,7 @@
           <span class="portrait-cta" aria-hidden="true">Learn More</span>
         </a>
       </div>
-      <div>
+      <div class="about-text">
         <p>I'm a fourth-year Psychology student at UCLA interested in the intersection of psychology and self-expression. Painting, especially portraiture, is how I explore that space.</p>
         <p>I am also interested in cognition, behavior, mental health, and the application of psychological research to complex human problems.</p>
         <p>In my free time, I enjoy philosophy and travel. See my blog, <a class="inline-link" href="https://blog.emilyfang.me/">The Wandering Mind</a>, to follow my journey.</p>
@@ -287,6 +302,25 @@
     const close = () => lb.classList.remove('open');
     lb.addEventListener('click', close);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+  <script>
+    // Scrolling moves the cloud and grass backgrounds up faster than the page, for a sense of motion.
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const sections = document.querySelectorAll('.full-bleed');
+      let ticking = false;
+      const update = () => {
+        sections.forEach(sec => {
+          const r = sec.getBoundingClientRect();
+          const offset = (r.top + r.height / 2) - innerHeight / 2;
+          sec.style.setProperty('--py', (offset * 0.2).toFixed(1) + 'px');
+        });
+        ticking = false;
+      };
+      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      addEventListener('resize', update);
+      update();
+    })();
   </script>
   <script>
     // First click on the About photo fades it and shows "Learn More"; the second click follows the link.
