@@ -97,6 +97,16 @@
       line-height: 1; letter-spacing: -0.02em; color: var(--text); margin-bottom: 40px;
     }
     #work .section-label::before { display: none; }
+    /* Large two-column gallery that spans nearly the full page width */
+    #work .gallery {
+      --side: max(96px, 8vw);
+      width: calc(100vw - 2 * var(--side)); margin-left: calc(50% - 50vw + var(--side));
+      columns: 2; column-gap: clamp(28px, 4vw, 64px);
+    }
+    #work .piece { margin-bottom: clamp(36px, 4vw, 64px); }
+    #work .caption { font-size: 14px; }
+    #work .caption .title { font-size: 17px; }
+    @media (max-width: 720px) { #work .gallery { --side: 16px; columns: 1; } }
 
     /* Gallery */
     .section-label {
