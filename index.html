@@ -71,10 +71,12 @@
 
     /* Full-width section backgrounds and grass dividers */
     html { overflow-x: clip; }
-    .full-bleed { position: relative; isolation: isolate; clip-path: inset(0 -100vw); }
-    .full-bleed::before { content: ""; position: absolute; top: -40%; bottom: -40%; left: 50%; width: 100vw; transform: translate(-50%, var(--py, 0px)); z-index: -1; will-change: transform; }
-    .intro.full-bleed::before { background: url(images/clouds.jpg) center / cover no-repeat; }
-    .intro.full-bleed p { color: #2f3e57; }
+    .full-bleed { position: relative; isolation: isolate; }
+    .full-bleed::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); z-index: -1; }
+    .intro.full-bleed::before { background: linear-gradient(to bottom, rgba(12, 28, 58, 0.06) 0%, rgba(12, 28, 58, 0.22) 45%, rgba(12, 28, 58, 0.62) 100%), url(images/clouds.jpg) center / cover no-repeat; }
+    .intro.full-bleed h1 { color: #fff; text-shadow: 0 2px 18px rgba(12, 28, 58, 0.35); }
+    .intro.full-bleed h1 em { color: #a8c1ff; }
+    .intro.full-bleed p { color: #fff; text-shadow: 0 1px 10px rgba(12, 28, 58, 0.5); }
     #about .portrait-link { background: var(--bg); }
     #about .inline-link { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
     #about.full-bleed::before { background: url(images/grass.jpg) center / cover; }
@@ -303,25 +305,6 @@
     const close = () => lb.classList.remove('open');
     lb.addEventListener('click', close);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-  </script>
-  <script>
-    // Scrolling moves the cloud and grass backgrounds up faster than the page, for a sense of motion.
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const sections = document.querySelectorAll('.full-bleed');
-      let ticking = false;
-      const update = () => {
-        sections.forEach(sec => {
-          const r = sec.getBoundingClientRect();
-          const offset = (r.top + r.height / 2) - innerHeight / 2;
-          sec.style.setProperty('--py', (offset * 0.2).toFixed(1) + 'px');
-        });
-        ticking = false;
-      };
-      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-      addEventListener('resize', update);
-      update();
-    })();
   </script>
   <script>
     // First click on the About photo fades it and shows "Learn More"; the second click follows the link.
