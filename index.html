@@ -88,8 +88,13 @@
     .hero-curve { position: absolute; left: 50%; bottom: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
     #about .portrait-link { background: var(--bg); }
     #about .inline-link { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
-    #about.full-bleed::before { background: url(images/grass.jpg) center / cover; }
-    #about h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
+    /* About and Contact share one grass background with a curved top edge */
+    .grass-zone { padding-top: max(48px, 9vw); }
+    .grass-zone.full-bleed::before { background: url(images/grass.jpg) center / cover; }
+    .grass-curve { position: absolute; left: 50%; top: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
+    .grass-zone .split { padding-top: 40px; }
+    .grass-zone h2 { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
+    #contact .contact-card { background: rgba(251,250,248,.94); padding: 32px 36px; align-self: start; }
     #about .about-text { background: rgba(251,250,248,.94); padding: 32px 36px; align-self: start; }
     #work { padding-top: 72px; }
     #work .section-label {
@@ -280,7 +285,9 @@
       </div>
     </section>
 
-    <section id="about" class="split full-bleed">
+    <div class="grass-zone full-bleed">
+      <svg class="grass-curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 L1440 0 L1440 4 C 920 8, 440 50, 0 120 Z" fill="#fbfaf8"/></svg>
+    <section id="about" class="split">
       <div class="about-side">
         <h2>About</h2>
         <a class="portrait-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1" target="_blank" rel="noopener" aria-label="Learn more about Emily">
@@ -297,7 +304,7 @@
 
     <section id="contact" class="split">
       <h2>Contact</h2>
-      <div>
+      <div class="contact-card">
         <p>For commissions, inquiries, or just to say hello:</p>
         <a class="contact-link" href="mailto:hello@emilyfang.me">hello@emilyfang.me</a>
         <div class="socials">
@@ -305,6 +312,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <footer>
