@@ -191,6 +191,24 @@
       .intro { padding: 64px 0 48px; }
       .split { grid-template-columns: 1fr; gap: 16px; padding: 64px 0; }
     }
+
+    /* Refined look: Cormorant Garamond for display, Inter for everything else */
+    body { font-size: 16px; }
+    .logo-name { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 24px; text-transform: none; letter-spacing: 0.01em; }
+    nav a { font-family: "Inter", sans-serif; font-weight: 400; font-size: 12.5px; letter-spacing: 0.1em; }
+    .bloom { opacity: .7; transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(.85); }
+    .intro.full-bleed h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(40px, 5.6vw, 80px); line-height: 1.08; letter-spacing: 0; max-width: 20ch; }
+    .intro.full-bleed h1 em { color: #fff; font-style: italic; }
+    .intro.full-bleed p { font-size: 16px; max-width: 46ch; color: rgba(255, 255, 255, 0.82); }
+    .split h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); text-transform: none; letter-spacing: 0; }
+    .split p { color: #3a3a3a; }
+    #about .inline-link { font-family: "Inter", sans-serif; font-weight: 500; text-transform: none; letter-spacing: 0; }
+    .caption .title, #work .caption .title { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: 21px; }
+    .caption .meta { font-size: 13px; }
+    .contact-link { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 34px; }
+    .socials { font-size: 12px; letter-spacing: 0.1em; }
+    .portrait-cta { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 30px; text-transform: none; }
+    .lightbox .lb-caption { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: 24px; text-transform: none; letter-spacing: 0; }
   </style>
 </head>
 <body>
@@ -223,7 +241,7 @@
 
   <main class="wrap">
     <section class="intro full-bleed">
-      <h1 class="sans">Emily Fang is an artist specializing in <span class="mark">paintings<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 C 30 3, 70 2, 98 5"/></svg></span> &amp; <span class="mark squiggle"><em>portraits</em><svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6 Q 4 1 7 6 T 13 6 T 19 6 T 25 6 T 31 6 T 37 6 T 43 6 T 49 6 T 55 6 T 61 6 T 67 6 T 73 6 T 79 6 T 85 6 T 91 6 T 97 6"/></svg></span>.</h1>
+      <h1 class="sans">Emily Fang is an artist specializing in <span class="mark">paintings</span> &amp; <span class="mark squiggle"><em>portraits</em></span>.</h1>
       <p>Below is a collection of recent work in acrylic and embroidery, emphasizing human-centered interest and self-expression. More pieces coming soon 💙.</p>
       <svg class="hero-curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 L0 116 C 520 112, 1000 70, 1440 0 L1440 120 Z" fill="#fbfaf8"/></svg>
     </section>
