@@ -107,6 +107,9 @@
     #work .caption { font-size: 14px; }
     #work .caption .title { font-size: 17px; }
     @media (max-width: 720px) { #work .gallery { --side: 16px; columns: 1; } }
+    /* Paintings fade and rise into view as you scroll */
+    .reveal #work .piece { opacity: var(--p, 0); transform: translateY(calc((1 - var(--p, 0)) * 60px)); will-change: opacity, transform; }
+    .reveal #work .piece.shown { transform: none; will-change: auto; }
 
     /* Gallery */
     .section-label {
@@ -330,6 +333,28 @@
     const close = () => lb.classList.remove('open');
     lb.addEventListener('click', close);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+  <script>
+    // Each painting starts hidden and becomes clearer the further it scrolls into view.
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const pieces = document.querySelectorAll('#work .piece');
+      document.documentElement.classList.add('reveal');
+      let ticking = false;
+      const update = () => {
+        const h = innerHeight;
+        pieces.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+          const p = Math.min(1, Math.max(0, (h - top) / (h * 0.55)));
+          el.style.setProperty('--p', p.toFixed(3));
+          el.classList.toggle('shown', p >= 1);
+        });
+        ticking = false;
+      };
+      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      addEventListener('resize', update);
+      update();
+    })();
   </script>
   <script>
     // First click on the About photo fades it and shows "Learn More"; the second click follows the link.
