@@ -22,7 +22,7 @@
     :root {
       --bg: #fbfaf8;
       --text: #1c1c1c;
-      --muted: #7a7a7a;
+      --muted: #6b6b6b;
       --line: #e6e3de;
       --blue: #002fa7;
       --placeholder: #e4ebf7;
@@ -189,9 +189,15 @@
     .shop-hero h1 em { font-style: italic; }
     .product .name { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: 22px; }
     .shop-note h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 36px; text-transform: none; letter-spacing: 0; }
+    /* Accessibility: skip link and visible keyboard focus */
+    .skip-link { position: absolute; left: 16px; top: -48px; z-index: 50; background: #fff; color: var(--blue); padding: 10px 16px; font-size: 14px; border-radius: 4px; transition: top .2s; }
+    .skip-link:focus { top: 12px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+    header a:focus-visible { outline-color: #fff; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="blooms" aria-hidden="true">
     <span class="bloom" style="left:4.6%;top:8%;width:64px;--w:64px;--r:-5deg"><img src="images/tulips/yellow-1.svg" alt=""></span>
     <span class="bloom" style="left:95.4%;top:16%;width:62px;--w:62px;--r:6deg"><img src="images/tulips/blue-2.svg" alt=""></span>
@@ -219,7 +225,7 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="main" class="wrap">
     <section class="shop-hero">
       <div class="section-label">Shop</div>
       <h1>Prints &amp; <em>apparel</em>.</h1>

@@ -22,7 +22,7 @@
     :root {
       --bg: #fbfaf8;
       --text: #1c1c1c;
-      --muted: #7a7a7a;
+      --muted: #6b6b6b;
       --line: #e6e3de;
       --blue: #002fa7;
       --placeholder: #e4ebf7;
@@ -228,9 +228,23 @@
       opacity: 0; transition: opacity .35s ease; pointer-events: none;
     }
     .piece:hover .hover-title, .piece:focus-within .hover-title { opacity: 1; }
+    /* Accessibility: skip link and visible keyboard focus */
+    .skip-link { position: absolute; left: 16px; top: -48px; z-index: 50; background: #fff; color: var(--blue); padding: 10px 16px; font-size: 14px; border-radius: 4px; transition: top .2s; }
+    .skip-link:focus { top: 12px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+    header a:focus-visible { outline-color: #fff; }
+    /* Hero call-to-action buttons */
+    .hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 36px; }
+    .btn { display: inline-block; padding: 13px 26px; border-radius: 999px; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; transition: background .2s, color .2s; }
+    .btn-primary { background: #fff; color: var(--blue); }
+    .btn-primary:hover { background: rgba(255, 255, 255, 0.88); }
+    .btn-secondary { border: 1px solid rgba(255, 255, 255, 0.7); color: #fff; }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+    .intro .btn:focus-visible { outline-color: #fff; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="blooms" aria-hidden="true">
     <span class="bloom" style="left:4.6%;top:8%;width:64px;--w:64px;--r:-5deg"><img src="images/tulips/yellow-1.svg" alt=""></span>
     <span class="bloom" style="left:95.4%;top:16%;width:62px;--w:62px;--r:6deg"><img src="images/tulips/blue-2.svg" alt=""></span>
@@ -258,10 +272,14 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="wrap" id="main">
     <section class="intro full-bleed">
       <h1 class="sans">Emily Fang is an <span class="mark">artist<svg class="swoosh" viewBox="0 0 200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M3 15 C 40 7, 112 2, 197 2 C 199 2, 199 4.5, 196 4.5 C 124 6.5, 62 11, 16 18 C 9 19, 1 19, 3 15 Z"/><path d="M104 17 C 136 14, 166 12.2, 193 11.2 C 195.5 11.1, 195.5 13.6, 193 13.8 C 166 15, 136 17.2, 106 20.2 C 102.5 20.5, 101.5 17.4, 104 17 Z"/><path d="M146 24 C 160 22.4, 174 21.4, 187 20.8 C 189.5 20.7, 189.5 23.2, 187 23.4 C 174 24.2, 160 25.6, 147 27.2 C 144 27.6, 143.5 24.4, 146 24 Z"/></svg></span> specializing in paintings &amp; <span class="mark"><em>portraits</em><svg class="swoosh" viewBox="0 0 200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4 7 C 60 3, 140 3, 197 8 C 199.5 8.3, 199 11, 196.5 10.8 C 140 7.4, 60 7.6, 6 10.4 C 2.5 10.6, 1.5 7.3, 4 7 Z"/><path d="M96 15.5 C 70 15.8, 40 17, 14 19.6 C 6 20.4, 4 25.6, 10.5 26.4 C 18 27.3, 27 25.8, 33 24.6 C 26 24.9, 16 25.2, 12.5 24 C 10.6 23.3, 11.6 22, 15 21.7 C 40 19.6, 70 18.4, 96 18.2 C 98.8 18.2, 98.8 15.5, 96 15.5 Z"/></svg></span>.</h1>
       <p>Below is a collection of recent work in acrylic and embroidery, emphasizing human-centered interest and self-expression. More pieces coming soon 💙.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#work">View the work</a>
+        <a class="btn btn-secondary" href="#contact">Commission a piece</a>
+      </div>
       <svg class="hero-curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 L0 116 C 520 112, 1000 70, 1440 0 L1440 120 Z" fill="#fbfaf8"/></svg>
     </section>
 
