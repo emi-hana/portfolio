@@ -174,7 +174,8 @@
     body { font-size: 16px; }
     .logo-name { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 24px; text-transform: none; letter-spacing: 0.01em; }
     nav a { font-family: "Inter", sans-serif; font-weight: 400; font-size: 12.5px; letter-spacing: 0.1em; }
-    .bloom { opacity: .7; transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(.85); }
+    .bloom { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(.85); }
+    @media (max-width: 720px) { .bloom { opacity: .5; } }
     .shop-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 72px); text-transform: none; letter-spacing: 0; line-height: 1.05; }
     .shop-hero h1 em { font-style: italic; }
     .product .name { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: 22px; }
