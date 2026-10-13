@@ -210,6 +210,15 @@
     .socials { font-size: 12px; letter-spacing: 0.1em; }
     .portrait-cta { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 30px; text-transform: none; }
     .lightbox .lb-caption { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: 24px; text-transform: none; letter-spacing: 0; }
+    /* Title appears over a painting on hover */
+    .piece .frame { position: relative; }
+    .piece .hover-title {
+      position: absolute; inset: auto 0 0 0; padding: 48px 22px 18px;
+      font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: clamp(22px, 2.2vw, 30px); color: #fff;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+      opacity: 0; transition: opacity .35s ease; pointer-events: none;
+    }
+    .piece:hover .hover-title, .piece:focus-within .hover-title { opacity: 1; }
   </style>
 </head>
 <body>
@@ -250,14 +259,14 @@
     <section id="work">
       <div class="section-label">Selected work</div>
       <div class="gallery">
-        <figure class="piece" data-full="images/art-1-v2.jpg" data-title="Portrait Study of Man">
-          <div class="frame"><img src="images/art-1-v2.jpg" alt="Painted portrait of a man in a blue suit adjusting his tie" width="1577" height="2000" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait Study of Man</span><span class="meta">Acrylic, 2026</span></figcaption>
+        <figure class="piece" data-full="images/art-1-v3.jpg" data-title="Man I">
+          <div class="frame"><img src="images/art-1-v3.jpg" alt="Painted portrait of a man in a blue suit adjusting his tie" width="1597" height="2000" loading="lazy"></div>
+          <figcaption class="caption"><span class="title">Man I</span><span class="meta">Acrylic, 2026</span></figcaption>
         </figure>
 
-        <figure class="piece" data-full="images/art-3.jpg" data-title="Portrait III">
+        <figure class="piece" data-full="images/art-3.jpg" data-title="Man II">
           <div class="frame"><img src="images/art-3.jpg" alt="Expressive painted portrait of a young man with dark hair in warm yellow light" width="1537" height="2000" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait III</span><span class="meta">Acrylic, 2021</span></figcaption>
+          <figcaption class="caption"><span class="title">Man II</span><span class="meta">Acrylic, 2021</span></figcaption>
         </figure>
 
         <figure class="piece" data-full="images/shirt-emblem.jpg" data-title="Shirt Design">
@@ -265,9 +274,9 @@
           <figcaption class="caption"><span class="title">Shirt Design</span><span class="meta">Embroidery</span></figcaption>
         </figure>
 
-        <figure class="piece" data-full="images/art-2.jpg" data-title="Portrait II">
-          <div class="frame"><img src="images/art-2.jpg" alt="Painted portrait of two children lying head to head, smiling" width="2000" height="1486" loading="lazy"></div>
-          <figcaption class="caption"><span class="title">Portrait II</span><span class="meta">Acrylic, 2025</span></figcaption>
+        <figure class="piece" data-full="images/art-2-v2.jpg" data-title="When We Were Young">
+          <div class="frame"><img src="images/art-2-v2.jpg" alt="Painted portrait of two children lying head to head, smiling" width="2000" height="1486" loading="lazy"></div>
+          <figcaption class="caption"><span class="title">When We Were Young</span><span class="meta">Acrylic, 2025</span></figcaption>
         </figure>
 
 
@@ -362,6 +371,16 @@
       addEventListener('resize', update);
       update();
     })();
+  </script>
+  <script>
+    // Add each painting's title as a hover overlay
+    document.querySelectorAll('.piece[data-title] .frame').forEach(f => {
+      const t = document.createElement('span');
+      t.className = 'hover-title';
+      t.setAttribute('aria-hidden', 'true');
+      t.textContent = f.closest('.piece').dataset.title;
+      f.appendChild(t);
+    });
   </script>
   <script>
     // First click on the About photo fades it and shows "Learn More"; the second click follows the link.
