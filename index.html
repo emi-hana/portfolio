@@ -228,6 +228,16 @@
       opacity: 0; transition: opacity .35s ease; pointer-events: none;
     }
     .piece:hover .hover-title, .piece:focus-within .hover-title { opacity: 1; }
+    /* Blue Contact section and footer bookend the page, matching the top */
+    #contact.full-bleed { padding-top: calc(max(48px, 9vw) + 56px); padding-bottom: 96px; }
+    #contact.full-bleed::before { background: var(--blue); }
+    .contact-curve { position: absolute; left: 50%; top: -1px; width: 100vw; height: 9vw; min-height: 48px; transform: translateX(-50%); display: block; }
+    #contact h2 { color: #fff; }
+    #contact p { color: rgba(255, 255, 255, 0.85); }
+    #contact .contact-link { color: #fff; }
+    #contact .socials a { color: rgba(255, 255, 255, 0.7); }
+    #contact .socials a:hover { color: #fff; }
+    footer { background: var(--blue); color: rgba(255, 255, 255, 0.6); }
   </style>
 </head>
 <body>
@@ -321,7 +331,8 @@
       </div>
     </section>
 
-    <section id="contact" class="split">
+    <section id="contact" class="split full-bleed">
+      <svg class="contact-curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 L1440 0 L1440 4 C 920 8, 440 50, 0 120 Z" fill="#fbfaf8"/></svg>
       <h2>Contact</h2>
       <div>
         <p>For commissions, inquiries, or just to say hello:</p>
