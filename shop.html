@@ -175,6 +175,10 @@
     .product .name { font-family: "Inter Tight", "Inter", sans-serif; font-size: 18px; font-weight: 600; }
     .product .kind { font-size: 13px; color: var(--muted); }
     .product .buy { justify-self: start; font: inherit; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 2px; cursor: not-allowed; }
+    .product .buy.live { cursor: pointer; color: #fff; background: var(--blue); border-color: var(--blue); text-decoration: none; transition: background .2s; }
+    .product .buy.live:hover { background: #26408a; }
+    .product .buy.live:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    .ship-note { font-size: 13px; color: var(--muted); }
     .shop-note { border-top: 1px solid var(--line); padding: 48px 0 88px; display: grid; gap: 10px; }
     .shop-note h2 { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; letter-spacing: -0.02em; }
     .shop-note p { color: #444; max-width: 58ch; }
@@ -229,32 +233,32 @@
     <section class="shop-hero">
       <div class="section-label">Shop</div>
       <h1>Prints &amp; <em>apparel</em>.</h1>
-      <p>Prints of my paintings and pieces from my embroidery work. The shop is opening soon 💙.</p>
+      <p>Prints of my paintings and pieces from my embroidery work. Prints ship within the US.</p>
     </section>
     <section class="products" aria-label="Products">
         <article class="product">
-          <div class="img"><img src="images/art-1-v3-1100.jpg" alt="Man I" loading="lazy"><span class="badge">Coming soon</span></div>
-          <div class="name">Man I</div>
-          <div class="kind">Art print</div>
-          <button class="buy" type="button" disabled>Coming soon</button>
-        </article>
-        <article class="product">
-          <div class="img"><img src="images/art-2-v2-1100.jpg" alt="When We Were Young" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="img"><img src="images/art-2-v2-1100.jpg" alt="When We Were Young" loading="lazy"></div>
           <div class="name">When We Were Young</div>
-          <div class="kind">Art print</div>
-          <button class="buy" type="button" disabled>Coming soon</button>
+          <div class="kind">Art print, 8 × 10 in · $30</div>
+          <a class="buy live" href="https://buy.stripe.com/6oU7sKbcl3007Q63ymfYY03" target="_blank" rel="noopener">Buy print</a>
         </article>
         <article class="product">
-          <div class="img"><img src="images/art-3-1100.jpg" alt="Man II" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="img"><img src="images/art-3-1100.jpg" alt="Man II" loading="lazy"></div>
           <div class="name">Man II</div>
-          <div class="kind">Art print</div>
-          <button class="buy" type="button" disabled>Coming soon</button>
+          <div class="kind">Art print, 8 × 10 in · $30</div>
+          <a class="buy live" href="https://buy.stripe.com/9B63cu6W50RS6M22uifYY02" target="_blank" rel="noopener">Buy print</a>
         </article>
         <article class="product">
-          <div class="img"><img src="images/art-4-v2-1100.jpg" alt="Bonding" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="img"><img src="images/art-4-v2-1100.jpg" alt="Bonding" loading="lazy"></div>
           <div class="name">Bonding</div>
-          <div class="kind">Art print</div>
-          <button class="buy" type="button" disabled>Coming soon</button>
+          <div class="kind">Art print, 8 × 10 in · $30</div>
+          <a class="buy live" href="https://buy.stripe.com/14AbJ06W5dEE3zQ5GufYY01" target="_blank" rel="noopener">Buy print</a>
+        </article>
+        <article class="product">
+          <div class="img"><img src="images/art-5-1100.jpg" alt="Still Life with Skull" loading="lazy"></div>
+          <div class="name">Still Life with Skull</div>
+          <div class="kind">Art print, 8 × 10 in · $30</div>
+          <a class="buy live" href="https://buy.stripe.com/6oUdR8eoxcAAb2ifh4fYY00" target="_blank" rel="noopener">Buy print</a>
         </article>
         <article class="product">
           <div class="img"><img src="images/shirt-emblem.jpg" alt="Guinea Pig Tee" loading="lazy"><span class="badge">Coming soon</span></div>
