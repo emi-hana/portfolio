@@ -198,6 +198,18 @@
     .skip-link:focus { top: 12px; }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
     header a:focus-visible { outline-color: #fff; }
+    /* Swipeable photo carousel with Instagram-style dots */
+    .carousel .slides { display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+    .carousel .slides::-webkit-scrollbar { display: none; }
+    .carousel .slides img { flex: 0 0 100%; scroll-snap-align: start; }
+    .carousel .arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--blue); font-size: 22px; line-height: 1; cursor: pointer; opacity: 0; transition: opacity .2s; box-shadow: 0 1px 4px rgba(0, 0, 0, .15); }
+    .carousel .prev { left: 10px; } .carousel .next { right: 10px; }
+    .carousel:hover .arrow, .carousel .arrow:focus-visible { opacity: 1; }
+    .carousel .arrow[hidden] { display: none; }
+    .dots { display: flex; justify-content: center; gap: 6px; margin-top: -2px; }
+    .dots span { width: 6px; height: 6px; border-radius: 50%; background: #c9c9c9; transition: background .2s; }
+    .dots span.on { background: var(--blue); }
+    @media (hover: none) { .carousel .arrow { display: none; } }
   </style>
 </head>
 <body>
@@ -261,7 +273,16 @@
           <a class="buy live" href="https://buy.stripe.com/6oUdR8eoxcAAb2ifh4fYY00" target="_blank" rel="noopener">Buy print</a>
         </article>
         <article class="product">
-          <div class="img"><img src="images/shirt-emblem.jpg" alt="Guinea Pig Tee" loading="lazy"><span class="badge">Coming soon</span></div>
+          <div class="img carousel" data-carousel>
+            <div class="slides" tabindex="0" aria-label="Guinea Pig Tee photos">
+              <img src="images/shirt-emblem.jpg" alt="Guinea Pig Tee embroidery close-up" loading="lazy">
+              <img src="images/guinea-pig-model.jpg" alt="Model wearing the Guinea Pig Tee" loading="lazy">
+            </div>
+            <button class="arrow prev" type="button" aria-label="Previous photo">&#8249;</button>
+            <button class="arrow next" type="button" aria-label="Next photo">&#8250;</button>
+            <span class="badge">Coming soon</span>
+          </div>
+          <div class="dots" aria-hidden="true"><span class="on"></span><span></span></div>
           <div class="name">Guinea Pig Tee</div>
           <div class="kind">Embroidered T-shirt</div>
           <button class="buy" type="button" disabled>Coming soon</button>
@@ -277,5 +298,24 @@
     <div class="wrap">© <span id="year">2026</span> Emily Fang</div>
   </footer>
 
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach(function (c) {
+      var track = c.querySelector('.slides'), n = track.children.length;
+      var dots = c.parentElement.querySelectorAll('.dots span');
+      var prev = c.querySelector('.prev'), next = c.querySelector('.next');
+      function idx() { return Math.round(track.scrollLeft / track.clientWidth); }
+      function update() {
+        var i = idx();
+        dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+        prev.hidden = i === 0; next.hidden = i === n - 1;
+      }
+      function go(d) { track.scrollTo({ left: (idx() + d) * track.clientWidth }); }
+      prev.addEventListener('click', function () { go(-1); });
+      next.addEventListener('click', function () { go(1); });
+      track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); });
+      track.addEventListener('scroll', update, { passive: true });
+      update();
+    });
+  </script>
 </body>
 </html>
