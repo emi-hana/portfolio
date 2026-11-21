@@ -178,6 +178,12 @@
     .product .buy.live { cursor: pointer; color: #fff; background: var(--blue); border-color: var(--blue); text-decoration: none; transition: background .2s; }
     .product .buy.live:hover { background: #26408a; }
     .product .buy.live:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    /* Softer, rounder buttons */
+    .product .buy { border-radius: 999px; padding: 10px 22px; font-size: 13px; letter-spacing: .04em; text-transform: none; font-weight: 500; }
+    .product .buy.live { box-shadow: 0 3px 0 #001f73; transition: background .2s, transform .15s, box-shadow .15s; }
+    .product .buy.live:hover { background: #1f45c4; transform: translateY(-2px); box-shadow: 0 5px 0 #001f73; }
+    .product .buy.live:active { transform: translateY(2px); box-shadow: 0 1px 0 #001f73; }
+    @media (prefers-reduced-motion: reduce) { .product .buy.live, .product .buy.live:hover, .product .buy.live:active { transform: none; } }
     .ship-note { font-size: 13px; color: var(--muted); }
     .shop-note { border-top: 1px solid var(--line); padding: 48px 0 88px; display: grid; gap: 10px; }
     .shop-note h2 { font-family: "Inter Tight", "Inter", sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; letter-spacing: -0.02em; }
